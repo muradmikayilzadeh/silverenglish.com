@@ -1,0 +1,95 @@
+#courseContent{
+
+	.heading{
+		font-family: 'Roboto',sans-serif;
+		font-weight: 600;
+		text-align: center;
+		margin-top: 60px;
+	}
+
+	.line{
+		margin:0 auto;
+		width:40px;
+		height: 2px;
+		background:#7CB342;
+	}
+
+	.userLine{
+		height:100px;
+		margin-top: 30px;
+
+		.col-md-4{
+		 	font-size: 18px;
+		 	text-align:center;
+		 	padding:20px;
+			
+			i{
+				font-weight: 600;
+			}
+		 	span{
+		 		font-family: 'Roboto',sans-serif;
+		 		font-weight: 600;
+		 	}
+
+		 	p{
+		 		color:#A7A7A7;
+		 		font-size: 12px;
+		 	}
+		}
+	}
+
+	.about{
+		img{
+			height: 500px;
+		}
+		.courseLine{
+			border-bottom:1px solid #DDDDDD;
+			ul{
+				margin:0;
+				padding:0;
+				li{
+					display: inline-block;
+					font-family: 'Roboto',sans-serif;
+					font-size: 20px;
+					font-weight:600;
+					padding:15px 20px;
+
+					a{
+						color:#212121;
+						padding:15px 0;
+						text-decoration: none;
+						&:hover{
+							border-bottom:3px solid #7CB342;
+						}
+					}
+				}
+
+				li:first-child{
+					padding-left:0;
+				}
+			}
+		}
+
+		.textSection{
+			margin-top: 40px;
+			h2{
+				font-family: 'Roboto',sans-serif;
+				font-weight: 600;
+				font-size:30px;
+				margin-bottom:30px;
+			}
+			p{
+				font-family: 'Roboto',sans-serif;
+				line-height: 2;
+				color:#616161;
+				font-size: 15px;
+			}
+		}
+
+		.textSection:last-child{
+			p{
+				margin-bottom:100px;
+			}
+		}
+	}
+}

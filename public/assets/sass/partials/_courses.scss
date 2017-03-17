@@ -1,0 +1,56 @@
+#courses{
+	padding-bottom:30px;
+	.course{
+		margin-top: 30px;
+		.body{
+			border:1px solid #CECECE;
+		}
+		.yazi{
+			padding:20px;
+			.name{
+				color:#212121;
+				font-family: 'Roboto',sans-serif;
+				font-weight:600;
+				font-size: 17px;
+				margin-top: 10px;
+			}
+
+			img{
+				width:40px;
+				height: 40px;
+				border-radius:100%;
+				display: inline-block;
+			}
+
+			.author{
+				font-family: 'Roboto',sans-serif;
+				display: inline-block;
+				font-weight: bold;
+				color:#6A6A6A;
+			}
+		}
+
+		.price{
+			border-top:1px solid #CECECE;
+			padding:20px;
+			.value{
+				color:white;
+				background: #7CB342;
+				padding:5px 20px;
+				font-family: 'Roboto',sans-serif;
+				font-weight: bold;
+				display: inline-block;
+				margin-bottom: -1px;
+				transition: all .4s ease;
+
+				&:hover{
+					background:#558B2F;
+					cursor: pointer;
+				}
+			}
+			.user{
+				margin-top: 5px;
+			}
+		}
+	}
+}

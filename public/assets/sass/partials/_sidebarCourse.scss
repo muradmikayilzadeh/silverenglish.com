@@ -1,0 +1,146 @@
+#courseContent{
+
+	.col-md-4{
+
+		.sidebar{
+			background: #F5F5F5;
+			padding:25px;
+			
+
+			.header{
+				font-family: 'Roboto',sans-serif;
+				font-weight:600;
+			}
+			.line{
+				width:40px;
+				height: 2px;
+				background:#7CB342;
+			}
+
+			
+
+
+			.take{
+				padding-bottom:20px;
+				border-bottom:1px solid #DEDEDE;
+				p{
+					color:#7CB342;
+					font-family: 'Roboto',sans-serif;
+					font-weight: 600;
+					font-size: 36px;
+					display: inline-block;
+				}
+
+				button{
+					background:#7CB342;
+					color:white;
+					font-family:'Roboto',sans-serif;
+					color:white;
+					border:none;
+					padding:10px;
+					display: inline-block;
+					float: right;
+					margin-top: 5px;
+				}
+			}
+
+
+			.share{
+				padding-top:20px;
+				padding-bottom:20px;
+				border-bottom:1px solid #DEDEDE;
+				i{
+					font-size: 20px;
+					padding-left:10px;
+
+					&:hover{
+						cursor: pointer;
+					}
+				}
+
+				i:first-child{
+					padding-left:0;
+				}
+			}
+
+
+			.author{
+				padding-top:20px;
+				padding-bottom:20px;
+				border-bottom:1px solid #DEDEDE;
+				text-align: center;
+
+				img{
+					width:100px;
+					height:100px;
+					border-radius: 100%;
+				}
+
+				.name{
+					font-family: 'Roboto',sans-serif;
+					font-weight: bold;
+					font-size: 18px;
+					margin-top: 10px;
+				}
+				span{
+					color:#616161;
+					font-family: 'Roboto',sans-serif;
+					font-size: 12px;
+					padding-top: -10px;
+				}
+			}
+
+
+			.features{
+				border-bottom:1px solid #DEDEDE;
+				padding-top:20px;
+				padding-bottom:20px;
+				.line{
+					margin:0;
+				}
+				ul{
+					margin:0;
+					padding:0;
+					font-family: 'Roboto',sans-serif;
+					font-weight: 600;
+					font-size: 16px;
+					line-height: 3;
+					display: inline-block;
+					li{
+						list-style: none;
+					}
+				}
+
+				ul:last-child{
+					margin-left: 30px;
+				}
+			}
+
+			.tags{
+				padding-top:20px;
+				padding-bottom:20px;
+				.line{
+					margin:0;
+				}
+				.tag{
+					border:2px solid #DEDEDE;
+					padding:5px;
+					font-family: 'Roboto',sans-serif;
+					display: inline-block;
+					margin-top: 10px;
+					font-size: 13px;
+					color:#212121;
+					text-decoration: none;
+					transition: all .4s ease;
+
+					&:hover{
+						color:#7CB342;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+	}
+
+}

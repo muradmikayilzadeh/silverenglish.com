@@ -1,0 +1,32 @@
+::selection{
+	background:#65951E;
+	color:white;
+}
+@media (max-width:1000px){
+	.center-md{
+		text-align: center !important;
+
+		h3{
+			text-align: center;
+			a{
+				text-align:center;
+				float: none !important;
+			}
+		}
+
+		.downBox{
+			.comment,.time{
+				float: none !important;
+			}
+		}
+
+		.line{
+			margin: 0 auto;
+		}
+	}
+}
+
+@import 'partials/menu';
+@import 'partials/banner';
+@import 'partials/news';
+@import 'partials/footer';

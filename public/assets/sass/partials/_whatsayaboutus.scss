@@ -1,0 +1,64 @@
+#whatsayaboutus{
+	height: 580px;
+	background:url('../images/aboutUs/bg.png') no-repeat center;	
+	background-size:cover;
+
+
+	.header{
+		text-align: center;
+		color:white;
+		margin-top: 100px;
+	}
+	.line{
+		margin:0 auto;
+		background:white;
+	}
+
+
+	img{
+		margin:0 auto;
+	}
+
+
+	.text{
+		color:white;
+		font-size: 16px;
+		font-weight: 600;
+		font-family: 'Roboto',sans-serif;
+		margin:0 auto;
+		margin-top: 20px;
+	}
+
+
+	.profile{
+		width: 70px;
+		height: 70px;
+		border-radius: 100%;
+		margin-top: 20px;
+	}
+
+
+	.circleSet{
+		margin-top: 20px;
+
+		.circle{
+			height: 10px;
+			width:10px;
+			border-radius:100%;
+			border:2px solid white;
+			display: inline-block;
+			transition: all .3s ease;
+
+			&:hover{
+				background:#7CB342;
+				border:2px solid #7CB342;
+				cursor: pointer;
+			}
+		}
+
+		.circle:first-child{
+			border:2px solid #7BB341;
+			background:#7BB341;
+		}
+	}
+}

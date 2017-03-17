@@ -1,0 +1,20 @@
+#path{
+	height: 75px;
+	background: #F5F5F5;
+
+	a{
+		color:#757575;
+		text-decoration: none;
+		line-height: 75px;
+		transition: all .3s ease;
+
+		&:hover{
+			color:#212121;
+		}
+
+	}
+
+	span{
+		padding: 0 10px;
+	}
+}

@@ -1,0 +1,43 @@
+#extra{
+	
+	.col-md-6{
+		
+		.forum,.contact{
+			border:1px solid #DEDEDE;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+
+		.forum,.contact{
+			.col-md-2{
+				padding-top:90px;
+				padding-bottom:70px;
+			}
+
+			.col-md-10{
+				padding-bottom:60px;
+				padding-top:40px;
+
+				h3{
+					color:#7CB342;
+					font-family: 'Roboto',sans-serif;
+					font-size: 30px;
+					font-weight: 500;
+				}
+				.text{
+					font-weight: 400;
+					margin-top: 0;
+				}
+
+				a{
+					color:#7CB342;
+					font-family: 'Roboto',sans-serif;
+					font-weight: bold;
+					text-decoration: none;
+				}
+			}
+		}
+
+	}
+}

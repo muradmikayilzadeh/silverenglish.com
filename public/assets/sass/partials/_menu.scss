@@ -1,0 +1,92 @@
+#menu{
+	height: 95px;
+	border-bottom:1px solid #DEDEDE;
+
+
+	.logo{
+		img{
+			height: 90px;
+			float: left;
+		}
+	}
+
+
+	.computer{
+		li{
+			display: inline-block;
+			line-height: 95px;
+			font-size: 15px;
+			font-family: 'Roboto',sans-serif;
+			font-weight: bold;
+			padding:0 30px;
+		}
+		a{
+			color:#212121;
+			text-decoration: none;
+			transition: all .2s ease;
+			&:hover{
+				color:#7CB342;
+			}
+		}
+	}
+	
+	
+	.fa-bars{
+		display: none;
+		font-size: 30px;
+		padding-top:30px;
+	}
+
+	.mobile{
+		background:#8BC34A;
+		z-index: 99999;
+		padding-top:19px;
+		padding-bottom:19px;
+		height: 500px;
+		overflow: auto;
+		margin-top: 20px;
+		display: none;
+
+		li{
+			display: block;
+			font-size: 20px;
+			width:100%;
+			text-align: center;
+			margin-left:-19px;
+
+			&:hover{
+
+				background:white;
+				a{
+					color:#8BC34A;
+				}
+
+			}
+
+			a{
+				color:white;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.activeMenu{
+	position:fixed;
+	top:0px;
+	z-index:999999;
+	background:white;
+	height:60px !important;
+
+	.logo{
+		img{
+			height: 57px !important;
+		}
+	}
+
+	ul{
+		li{
+			line-height:4 !important;
+		}
+	}
+}

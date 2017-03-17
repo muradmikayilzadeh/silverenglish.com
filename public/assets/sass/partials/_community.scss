@@ -1,0 +1,30 @@
+#community{
+	min-height:600px;
+	
+	.header{
+		margin-top: 125px;
+	}
+
+	.text{
+		max-width:550px;
+	}
+
+
+	.col-md-4{
+		text-align: center;
+		margin-top: 70px;
+
+		p{
+			font-family:'Robot',sans-serif;
+			font-weight: 700;
+			margin-top: 30px;
+		}
+	}
+
+
+	.col-md-3{
+		img{
+			margin-top: 100px;
+		}
+	}
+}
