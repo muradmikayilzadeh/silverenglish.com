@@ -9,12 +9,12 @@
 
 	<title>silverenglish.com</title>
 
-	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="assets/vendor/awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="{{url('assets/vendor/bootstrap/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{url('assets/vendor/awesome/css/font-awesome.css')}}">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
-	<script src="assets/vendor/js/jquery-3.1.0.js"></script>
+	<script src="{{url('assets/vendor/js/jquery-3.1.0.js')}}"></script>
 </head>
 <body>
 		<div class="container-fluid">
