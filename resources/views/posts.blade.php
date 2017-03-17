@@ -429,7 +429,9 @@
 
 			</section>
 
-@stop
+
 
 <script src="assets/js/fmCourses.js"></script>
 <script src="assets/js/mobileMenu.js"></script>
+
+@stop

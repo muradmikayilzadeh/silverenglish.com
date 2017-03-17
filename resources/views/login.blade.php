@@ -32,8 +32,9 @@
 					
 				<img src="assets/images/menu/logo.png" alt="">
 
-				<form action="">
-						
+				<form action="{{url('login/check')}}" method="post">
+					
+					{{csrf_field()}}
 					<input type="email" placeholder="E-poçt ünvanınız" class="form-control" name="email">
 					<br>
 					<input type="password" placeholder="Şifrəniz" class="form-control" name="password">

@@ -553,10 +553,10 @@
 
 					</section>
 
-
-@stop
 <script src="assets/js/fixedMenu.js"></script>
 <script src="assets/js/mobileMenu.js"></script>
 <script src="assets/js/scrollSlow.js"></script>
 <script src="assets/js/whatSay.js"></script>
 <script src="assets/js/slider.js"></script>
+
+@stop

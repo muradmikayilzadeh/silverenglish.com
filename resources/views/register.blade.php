@@ -32,12 +32,13 @@
 					
 				<img src="assets/images/menu/logo.png" alt="">
 
-				<form action="">
+				<form action="{{url('register/save')}}" method="post" enctype="multipart/form-data">
+					{{csrf_field()}}
 					<input type="text" placeholder="Adınız" class="form-control" name="name">
 					<br>
 					<input type="text" placeholder="Soyadınız" class="form-control" name="surname">
 					<br>
-					<input type="date" placeholder="Təvəllüd" class="form-control" name="date">
+					<input type="file" class="form-control" name="avatar">
 					
 					<br>
 						

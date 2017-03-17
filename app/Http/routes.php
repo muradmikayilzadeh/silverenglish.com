@@ -11,6 +11,8 @@
 |
 */
 
+
+// -----------------Web appin sehifeleri
 Route::get('/', function () {
     return view('index');
 });
@@ -35,5 +37,20 @@ Route::get('/posts', function () {
     return view('posts');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
 
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+
+// Login emeliyyatlari-----------------------
+
+Route::post('login/check','Login_Controller@login');
+
+// Register emeliyyatlari--------------------
+Route::post('register/save','Register_Controller@save');
 
