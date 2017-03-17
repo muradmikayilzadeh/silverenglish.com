@@ -1,11 +1,5 @@
 @extends('layouts.index')				
-					<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-
-					@php
-
-						var_dump(asset('assets/css/style.css'));
-
-					@endphp
+					<link rel="stylesheet" href="{{url('assets/css/style.css')}}">
 @section('content')
 
 					<section id="slider" class="col-md-12 col-xs-12 col-sm-12">
