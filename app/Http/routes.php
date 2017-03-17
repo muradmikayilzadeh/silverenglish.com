@@ -16,4 +16,24 @@ Route::get('/', function () {
 });
 
 
+Route::get('/courses', function () {
+    return view('courses');
+});
+
+
+Route::get('/course', function () {
+    return view('course');
+});
+
+
+
+Route::get('/post', function () {
+    return view('post');
+});
+
+Route::get('/posts', function () {
+    return view('posts');
+});
+
+
 

@@ -14,6 +14,13 @@
       float: none !important; }
     .center-md .line {
       margin: 0 auto; } }
+#bar {
+  background: #111111;
+  color: white;
+  line-height: 50px; }
+  #bar .fa-user-plus {
+    margin-left: 20px; }
+
 #menu {
   height: 95px;
   border-bottom: 1px solid #DEDEDE; }
