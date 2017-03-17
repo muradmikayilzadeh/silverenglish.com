@@ -9,9 +9,9 @@
 
 	<title>silverenglish.com</title>
 
-	<link rel="stylesheet" href="{{url('assets/vendor/bootstrap/css/bootstrap.css')}}">
-	<link rel="stylesheet" href="{{url('assets/vendor/awesome/css/font-awesome.css')}}">
-	<link rel="stylesheet" href="{{url('assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{url('../assets/vendor/bootstrap/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{url('../assets/vendor/awesome/css/font-awesome.css')}}">
+	<link rel="stylesheet" href="{{url('../assets/css/style.css')}}">
 
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
