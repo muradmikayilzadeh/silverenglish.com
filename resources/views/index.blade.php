@@ -1,7 +1,8 @@
-@extends('layouts.index')					
-@section('content')
+@extends('layouts.index')				
 					<link rel="stylesheet" href="{{url('assets/css/style.css')}}">
-					
+
+@section('content')
+
 					<section id="slider" class="col-md-12 col-xs-12 col-sm-12">
 						
 							<div class="row">
