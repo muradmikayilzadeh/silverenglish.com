@@ -31,16 +31,26 @@ class Register_Controller extends Controller
     	$new->surname=$request->surname;
 
     	if($request->hasFile('avatar')){
-            $file=$request->file('avatar');
-            $filename=time().'.'.$file->getClientOriginalExtension();
-            $file->move('assets/images/avatars',$filename);
-            $path='assets/images/avatars/'.$filename;
-            $new->avatar=$path;
+
+            $ext=$request->file('avatar')->getClientOriginalExtension();
+
+            if($ext=='jpg' || $ext=='png' || $ext=='jpeg' || $ext=='bmp')  {
+
+                $file=$request->file('avatar');
+                $filename=time().'.'.$file->getClientOriginalExtension();
+                $file->move('assets/images/avatars',$filename);
+                $path='assets/images/avatars/'.$filename;
+                $new->avatar=$path;
+
+            }
+           
         }
 
     	$new->active='1';
 
     	$new->save();
+
+        return redirect('/login');
 
 
     }
