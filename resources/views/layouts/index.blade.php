@@ -28,12 +28,21 @@
 
 								<div class="container">
 									
-									<i class="fa fa-sign-in"></i>
-									<span>Daxil ol</span>
+									@if(!isset($_SESSION['userTrue']))
+										<i class="fa fa-sign-in"></i>
+										<a href="{{url('/login')}}">Daxil ol</a>
 
-									<i class="fa fa-user-plus"></i>
-									<span>Qeydiyyatdan keç</span>
+										<i class="fa fa-user-plus"></i>
+										<a href="{{url('/register')}}">Qeydiyyatdan keç</a>
+										
+										@else
+										<i class="fa fa-user"></i>
+										<a href="{{url('/myprofile')}}">Profilim</a>
 
+										<i class="fa fa-sign-out"></i>
+										<a href="{{url('/logout')}}">Çıxış</a>
+
+									@endif
 
 								</div>
 

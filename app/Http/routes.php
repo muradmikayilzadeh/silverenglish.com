@@ -11,6 +11,7 @@
 |
 */
 
+session_start();
 
 // -----------------Web appin sehifeleri
 Route::get('/', function () {
@@ -19,22 +20,38 @@ Route::get('/', function () {
 
 
 Route::get('/courses', function () {
-    return view('courses');
+    if(isset($_SESSION['userTrue'])){
+    	return view('courses');
+    }else{
+    	return redirect('/login');
+    }
 });
 
 
 Route::get('/course', function () {
-    return view('course');
+    if(isset($_SESSION['userTrue'])){
+    	return view('course');
+    }else{
+    	return redirect('/login');
+    }
 });
 
 
 
-Route::get('/post', function () {
-    return view('post');
+Route::get('/blog', function () {
+    if(isset($_SESSION['userTrue'])){
+    	return view('post');
+    }else{
+    	return redirect('/login');
+    }
 });
 
-Route::get('/posts', function () {
-    return view('posts');
+Route::get('/bloghome', function () {
+    if(isset($_SESSION['userTrue'])){
+    	return view('posts');
+    }else{
+    	return redirect('/login');
+    }
 });
 
 Route::get('/login', function () {
@@ -50,7 +67,10 @@ Route::get('/register', function () {
 // Login emeliyyatlari-----------------------
 
 Route::post('login/check','Login_Controller@login');
+Route::get('logout','Login_Controller@logout');
 
 // Register emeliyyatlari--------------------
 Route::post('register/save','Register_Controller@save');
+
+
 

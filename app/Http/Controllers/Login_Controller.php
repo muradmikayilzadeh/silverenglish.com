@@ -27,6 +27,7 @@ class Login_Controller extends Controller
 
    		if($result!=null){
    			if($result->active!=0){
+          $_SESSION['userTrue']=TRUE;
    				return redirect('/');
    			}
    		}else{
@@ -34,5 +35,13 @@ class Login_Controller extends Controller
    		}
 
    	}
+
+
+    public function logout()
+    {
+      session_unset($_SESSION['userTrue']);
+      session_destroy();
+      return redirect('/login');
+    }
 
 }
