@@ -80,6 +80,12 @@ if(isset($_SESSION['userTrue'])){
     // MyProfilede tenzimlemeler
 
     Route::post('/myprofile/save', 'Profile_Controller@saveChanges');
+    Route::post('/myprofile/changepassword', 'Profile_Controller@password');
+
+
+    // Meqale Derc etmek
+    Route::post('/blog/save', 'Blog_Controller@newBlog');
+
 
 
 }

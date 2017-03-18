@@ -17,7 +17,7 @@
 
 					</div>
 
-					<div class="settings panel panel-info col-md-4 col-sm-6 col-xs-12">
+					<div class="settings panel panel-default col-md-4 col-sm-6 col-xs-12">
 						
 						<h2>Tənzimləmələr</h2>
 
@@ -39,14 +39,6 @@
 								<input type="text" class="form-control" name="surname" value="{{$userData->surname}}">
 
 							</div>
-	
-
-							{{-- <div class="input-group">
-								
-								<div class="input-group-addon">Şifrəniz</div>
-								<input type="password" class="form-control" name="password">
-
-							</div> --}}
 
 							<br>	
 
@@ -60,64 +52,70 @@
 							<br>
 
 							<input type="submit" value="Yenilə" class="btn btn-success">
+							<div class="btn btn-danger">Şifrəni yenilə</div>
+							
+							
+						</form>
+						
+						<script>
+							$('.btn-danger').click(function(event) {
+								$('.newPassword').removeClass('hidden')
+							});
+						</script>
+						
+						<form action="{{url('myprofile/changepassword')}}" method="post" class="hidden newPassword">
+							
+							{{csrf_field()}}
+							<div class="input-group">
+								
+								<div class="input-group-addon">Yeni Şifrəniz</div>
+								<input type="password" class="form-control" name="password">
+
+							</div>
+
+							<br>
+
+							<div class="input-group">
+								
+								<div class="input-group-addon">Şifrəni Təsdiqlə</div>
+								<input type="password" class="form-control" name="confirm">
+
+							</div>
+
+							<br>
+							<input type="submit" class="btn btn-default" value="Yenilə">
 
 						</form>
 
 					</div>
 					
 
-					<div class="blogs panel panel-danger col-md-7 col-sm-6 col-xs-12 col-md-offset-1">
+					<div class="blogs panel panel-default col-md-7 col-sm-6 col-xs-12 col-md-offset-1">
 						
 						<h2>Ən Son Məqalələriniz</h2>
 						
 						<ul class="nav nav-pills nav-stacked">
-
+						
+						@foreach($blogs as $blog)
 							<li class="active">
 								<a href="">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+									{{substr($blog->title,0,100)}}
 								</a>
 							</li>
-
-							<li>
-								<a href="">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-								</a>
-							</li>
-
-							<li>
-								<a href="">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-								</a>
-							</li>
-
-							<li>
-								<a href="">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-								</a>
-							</li>
-
-							<li>
-								<a href="">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-								</a>
-							</li>
-
-							<li>
-								<a href="">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-								</a>
-							</li>
+						@endforeach
 
 						</ul>
 
 					</div>	
 
-					<div class="writeBlog panel panel-success col-md-12 col-sm-12 col-xs-12">
+					<div class="writeBlog panel panel-default col-md-12 col-sm-12 col-xs-12">
 						
 						<h2>Məqalə Dərc Edin</h2>
 
-						<form action="">
+						<form action="{{url('blog/save')}}" method="post" enctype="multipart/form-data">
 							
+							{{csrf_field()}}
+
 							<div class="input-group">
 								
 								<div class="input-group-addon">
@@ -145,55 +143,21 @@
 								<div class="input-group-addon">
 									Mövzu
 								</div>
-								<select name="" class="form-control">
-								
-									<option name="" id="">Bir</option>
-									<option name="" id="">iki</option>
-									<option name="" id="">uc</option>
-
+								<select name="tag" class="form-control">
+								@foreach($tags as $tag)
+									<option value="{{$tag->id}}">{{$tag->name}}</option>
+								@endforeach
 								</select>
 
 							</div>
-								
+									
 							<div class="extra">
 								
 								<label for="photo">
 									<i class="fa fa-photo"></i>
 								</label>
-								<input type="file" id="photo" class="hidden">
+								<input type="file" id="photo" name="photo" class="hidden">
 
-
-							</div>
-
-							<div class="imgs col-md-12 col-sm-12 col-md-12">
-								
-								<div class="row">
-									
-									{{-- <div class="img">
-									
-										<img src="assets/images/avatars/1.png" class="img img-thumbnail img img-responsive">
-
-									</div>
-
-									<div class="img">
-										
-										<img src="assets/images/avatars/1.png" class="img img-thumbnail img img-responsive">
-
-									</div>
-
-									<div class="img">
-										
-										<img src="assets/images/avatars/1.png" class="img img-thumbnail img img-responsive">
-
-									</div>
-
-									<div class="img">
-										
-										<img src="assets/images/avatars/1.png" class="img img-thumbnail img img-responsive">
-
-									</div> --}}
-									
-								</div>
 
 							</div>
 					

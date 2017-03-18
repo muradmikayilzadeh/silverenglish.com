@@ -18,6 +18,7 @@ class CreateBlogsTable extends Migration
             $table->text('content');
             $table->integer('user_id');
             $table->string('img');
+            $table->integer('tag');
             $table->integer('active');
             $table->timestamps();
         });

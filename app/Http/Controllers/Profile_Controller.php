@@ -6,34 +6,34 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
-use App\blogs;
-
+use App\Blog;
+use App\Tag;
 class Profile_Controller extends Controller
 {
     public function myprofile()
     {
     	$userData=User::find($_SESSION['userTrue']);
 
-    	return view('myprofile',compact('userData'));
+        $blogs=Blog::where('user_id',$_SESSION['userTrue'])->get();
+
+        $tags=Tag::all();
+
+    	return view('myprofile',compact('userData','blogs','tags'));
     }
+
+
 
     public function saveChanges(Request $request)
     {
-
-
     	$this->validate($request,[
                 'name'=>'required',
                 'surname'=>'required',
-                // 'password'=>'required',
-                'avatar'=>'required',
-
                 ]);
 
     	$user=User::find($_SESSION['userTrue']);
 
     	$user->name=$request->name;
     	$user->surname=$request->surname;
-    	// $user->password=md5($request->password);
 
     	if($request->hasFile('avatar')){
 
@@ -53,8 +53,30 @@ class Profile_Controller extends Controller
 
         $user->save();
         return back();
-
-
     	
     }
+
+
+
+    public function password(Request $request)
+    {
+    	$this->validate($request,[
+                'password'=>'required',
+                'confirm'=>'required',
+                ]);
+
+    	if($request->password==$request->confirm){
+    		
+    		$user=User::find($_SESSION['userTrue']);
+
+    		$user->password=md5($request->password);
+
+    		$user->save();
+
+    	}
+
+    	return back();
+    }
+
+    
 }
