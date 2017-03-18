@@ -12,8 +12,8 @@
 					
 					<div class="avatar text-center">
 						
-						<img src="assets/images/avatars/1.png" class="img img-responsive">
-						<h2>Murad Mikayilzada</h2>
+						<img src="{{$userData->avatar}}">
+						<h2>{{$userData->name.' '.$userData->surname}}</h2>
 
 					</div>
 
@@ -21,12 +21,13 @@
 						
 						<h2>Tənzimləmələr</h2>
 
-						<form action="">
+						<form action="{{url('myprofile/save')}}" method="post" enctype="multipart/form-data">
 							
+							{{csrf_field()}}
 							<div class="input-group">
 								
 								<div class="input-group-addon">Ad</div>
-								<input type="text" class="form-control" name="name">
+								<input type="text" class="form-control" name="name" value="{{$userData->name}}">
 
 							</div>
 
@@ -35,25 +36,24 @@
 							<div class="input-group">
 								
 								<div class="input-group-addon">Soyad</div>
-								<input type="text" class="form-control" name="surname">
+								<input type="text" class="form-control" name="surname" value="{{$userData->surname}}">
 
 							</div>
+	
 
-							<br>	
-
-							<div class="input-group">
+							{{-- <div class="input-group">
 								
 								<div class="input-group-addon">Şifrəniz</div>
 								<input type="password" class="form-control" name="password">
 
-							</div>
+							</div> --}}
 
 							<br>	
 
 							<div class="input-group">
 								
 								<div class="input-group-addon">Şəkil</div>
-								<input type="file" class="form-control" name="avatar">
+								<input type="file" class="form-control" name="avatar" value="{{$userData->avatar}}">
 
 							</div>
 
@@ -169,7 +169,7 @@
 								
 								<div class="row">
 									
-									<div class="img">
+									{{-- <div class="img">
 									
 										<img src="assets/images/avatars/1.png" class="img img-thumbnail img img-responsive">
 
@@ -191,7 +191,7 @@
 										
 										<img src="assets/images/avatars/1.png" class="img img-thumbnail img img-responsive">
 
-									</div>
+									</div> --}}
 									
 								</div>
 

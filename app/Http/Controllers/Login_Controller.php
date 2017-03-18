@@ -27,7 +27,7 @@ class Login_Controller extends Controller
 
    		if($result!=null){
    			if($result->active!=0){
-          $_SESSION['userTrue']=TRUE;
+          $_SESSION['userTrue']=$result->id;
    				return redirect('/');
    			}
    		}else{
