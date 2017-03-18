@@ -3,6 +3,7 @@
 			<link rel="stylesheet" href="assets/css/posts.css">
 
 @section('content')
+
 			<section id="banner" class="col-md-12 col-sm-12 col-xs-12 text-center">
 						
 						
@@ -28,7 +29,9 @@
 			<section id="news" class="col-md-12 col-sm-12 col-xs-12">
 				
 				<div class="container">
-					
+						
+						
+
 						<div class="col-md-4 col-sm-12 col-xs-12">
 									
 							<img src="assets/images/news/2.jpg" class="img img-resonsive">
@@ -429,9 +432,5 @@
 
 			</section>
 
-
-
-<script src="assets/js/fmCourses.js"></script>
-<script src="assets/js/mobileMenu.js"></script>
 
 @stop

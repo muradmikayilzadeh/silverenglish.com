@@ -2,6 +2,7 @@
 	background:#65951E;
 	color:white;
 }
+
 @media (max-width:1000px){
 	.center-md{
 		text-align: center !important;
@@ -26,8 +27,8 @@
 	}
 }
 
+
 @import 'partials/bar';
 @import 'partials/menu';
-@import 'partials/banner';
-@import 'partials/news';
+@import 'partials/settings';
 @import 'partials/footer';

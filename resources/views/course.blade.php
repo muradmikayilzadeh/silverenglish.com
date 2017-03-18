@@ -190,7 +190,7 @@
 
 						
 
-<script src="assets/js/fmPost.js"></script>
-<script src="assets/js/mobileMenu.js"></script>
+<script src="{{url('assets/js/fmPost.js')}}"></script>
+<script src="{{url('assets/js/mobileMenu.js')}}"></script>
 
 @stop

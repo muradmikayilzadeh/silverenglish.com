@@ -13,9 +13,9 @@
 	<link rel="stylesheet" href="{{url('assets/vendor/awesome/css/font-awesome.css')}}">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-
 	<script src="{{url('assets/vendor/js/jquery-3.1.0.js')}}"></script>
-</head>
+	
+</head>	
 <body>
 		<div class="container-fluid">
 			
@@ -203,4 +203,16 @@
 
 		</div>
 </body>
+
+	<script src="{{url('assets/js/fmCourses.js')}}"></script>
+	<script src="{{url('assets/js/mobileMenu.js')}}"></script>
+	<script src="{{url('assets/js/fmPost.js')}}"></script>
+	<script src="{{url('assets/js/mobileMenu.js')}}"></script>
+	<script src="{{url('assets/js/fixedMenu.js')}}"></script>
+	<script src="{{url('assets/js/mobileMenu.js')}}"></script>
+	<script src="{{url('assets/js/scrollSlow.js')}}"></script>
+	<script src="{{url('assets/js/whatSay.js')}}"></script>
+	<script src="{{url('assets/js/slider.js')}}"></script>
 </html>
+
+

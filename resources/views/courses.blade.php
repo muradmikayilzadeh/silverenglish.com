@@ -271,6 +271,6 @@
 
 					</section>
 
-<script src="assets/js/fmCourses.js"></script>
-<script src="assets/js/mobileMenu.js"></script>
+<script src="{{url('assets/js/fmCourses.js')}}"></script>
+<script src="{{url('assets/js/mobileMenu.js')}}"></script>
 @stop

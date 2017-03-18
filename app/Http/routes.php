@@ -36,7 +36,13 @@ Route::get('/course', function () {
     }
 });
 
-
+Route::get('/myprofile', function () {
+    if(isset($_SESSION['userTrue'])){
+        return view('myprofile');
+    }else{
+        return redirect('/login');
+    }
+});
 
 Route::get('/blog', function () {
     if(isset($_SESSION['userTrue'])){

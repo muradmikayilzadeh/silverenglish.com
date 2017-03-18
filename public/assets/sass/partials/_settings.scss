@@ -1,0 +1,53 @@
+#myprofile{
+
+	margin-top:50px;
+	margin-bottom:30px;
+	
+	.avatar{
+		padding:10px;
+		img{
+			margin:0 auto;
+			border-radius: 100%;
+			padding: 3px;
+			border:1px solid gray;	
+		}
+	}
+
+	h2{
+		font-weight: bold;
+	}
+
+	.settings{
+		padding:20px;
+	}
+
+	.blogs{
+		padding:20px;
+	}
+
+	.writeBlog{
+		padding:20px;
+
+		.extra{	
+			margin-top: 10px;
+
+			i{
+				font-size: 20px;
+			}
+
+		}
+
+		.imgs{
+			.img{
+				display: inline-block;
+			}
+		}
+
+
+		input[type='submit']{
+			margin-top: 20px;
+		}
+
+	}
+
+}
