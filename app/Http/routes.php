@@ -37,21 +37,6 @@ Route::get('/course', function () {
 });
 
 
-Route::get('/blog', function () {
-    if(isset($_SESSION['userTrue'])){
-    	return view('post');
-    }else{
-    	return redirect('/login');
-    }
-});
-
-Route::get('/bloghome', function () {
-    if(isset($_SESSION['userTrue'])){
-    	return view('posts');
-    }else{
-    	return redirect('/login');
-    }
-});
 
 Route::get('/login', function () {
     return view('login');
@@ -71,9 +56,10 @@ Route::get('logout','Login_Controller@logout');
 // Register emeliyyatlari--------------------
 Route::post('register/save','Register_Controller@save');
 
-// Menim profilim
+
 if(isset($_SESSION['userTrue'])){
 
+    // myprofile-------------------------
     Route::get('/myprofile', 'Profile_Controller@myprofile');
 
 
@@ -88,7 +74,20 @@ if(isset($_SESSION['userTrue'])){
 
 
 
+
+
+    // Bloghome----------------------------
+    Route::get('/bloghome','Blog_Controller@index');
+
+    // Blog--------------------------------
+    Route::get('/blog/{id}','Blog_Controller@show');
+
+
 }
+
+
+
+
 
 
 

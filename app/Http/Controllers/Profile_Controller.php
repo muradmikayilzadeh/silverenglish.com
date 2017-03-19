@@ -52,7 +52,7 @@ class Profile_Controller extends Controller
         }
 
         $user->save();
-        return back();
+        return back()->with('success','Məlumatlarınız yeniləndi!');
     	
     }
 
@@ -75,7 +75,7 @@ class Profile_Controller extends Controller
 
     	}
 
-    	return back();
+    	return back()->with('newPassword','Şifrəniz yeniləndi!');
     }
 
     

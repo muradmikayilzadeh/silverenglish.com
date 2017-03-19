@@ -30,15 +30,26 @@
 				
 				<div class="container">
 						
-						
+					@php
+						function zaman($vaxt){
 
+							$aylar=['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avqust','Sentyabr','Oktyabr','Dekabr'];
+
+							$ay=explode('-',$vaxt);
+							$saat=explode(' ', $ay[2]);
+
+							return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
+
+						}
+					@endphp
+					@foreach($blogs as $blog)
 						<div class="col-md-4 col-sm-12 col-xs-12">
 									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
+							<img src="{{$blog->img}}" class="img img-resonsive">
 
 							<h3>
 
-									<a href="">The future of Web Design</a>
+									<a href="{{url('blog',$blog->id)}}">{{$blog->title}}</a>
 
 							</h3>
 
@@ -48,385 +59,15 @@
 									<div class="time">
 
 										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
+										<span>{{zaman($blog->created_at)}}</span>
 
 									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
 
 							</div>
 
 						</div>
+					@endforeach
 
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4 col-sm-12 col-xs-12">
-									
-							<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-							<h3>
-
-									<a href="">The future of Web Design</a>
-
-							</h3>
-
-							<div class="downBox">
-
-
-									<div class="time">
-
-										<i class="fa fa-clock-o"></i>
-										<span>November 11,2016</span>
-
-									</div>
-
-												
-									<div class="comment">
-
-										<i class="fa fa-comments-o"></i>
-										<span>3 Comments</span>
-
-									</div>
-
-
-							</div>
-
-						</div>
 
 				</div>
 

@@ -20,6 +20,14 @@
 					<div class="settings panel panel-default col-md-4 col-sm-6 col-xs-12">
 						
 						<h2>Tənzimləmələr</h2>
+						
+						@if ($message = Session::get('success'))
+		                 	<b style="color:red">{{ $message }}</b>
+		           		@endif
+
+		           		@if ($message = Session::get('newPassword'))
+		                 	<b style="color:red">{{ $message }}</b>
+		           		@endif
 
 						<form action="{{url('myprofile/save')}}" method="post" enctype="multipart/form-data">
 							
@@ -111,6 +119,10 @@
 					<div class="writeBlog panel panel-default col-md-12 col-sm-12 col-xs-12">
 						
 						<h2>Məqalə Dərc Edin</h2>
+						
+						@if ($message = Session::get('newBlog'))
+		                 	<b style="color:red">{{ $message }}</b>
+		           		@endif
 
 						<form action="{{url('blog/save')}}" method="post" enctype="multipart/form-data">
 							
@@ -143,10 +155,13 @@
 								<div class="input-group-addon">
 									Mövzu
 								</div>
+
 								<select name="tag" class="form-control">
+
 								@foreach($tags as $tag)
 									<option value="{{$tag->id}}">{{$tag->name}}</option>
 								@endforeach
+								
 								</select>
 
 							</div>

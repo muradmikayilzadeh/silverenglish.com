@@ -60,7 +60,7 @@
 
 												<div class="row">
 													
-													<img src="assets/images/menu/logo.png" alt="">
+													<img src="{{url('assets/images/menu/logo.png')}}" alt="">
 													
 												</div>
 

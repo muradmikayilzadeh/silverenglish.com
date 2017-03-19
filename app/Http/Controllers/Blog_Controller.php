@@ -8,8 +8,26 @@ use App\Http\Requests;
 use App\User;
 use App\Blog;
 use App\Tag;
+use App\Comments;
 class Blog_Controller extends Controller
 {
+
+    public function index()
+    {
+        $blogs=Blog::all();
+        return view('posts', compact('blogs'));
+    }
+
+
+    public function show($id)
+    {
+        $blog=Blog::find($id);
+        $user=User::find($blog->user_id);
+        $tag=Tag::find($blog->tag);
+        $comments=Comments::where('post_id',$id)->get();
+        return view('post',compact('blog','user','tag','comments'));
+    }
+
     public function newBlog(Request $request)
     {
     	$this->validate($request,[
@@ -32,8 +50,8 @@ class Blog_Controller extends Controller
 
                 $file=$request->file('photo');
                 $filename=time().'.'.$file->getClientOriginalExtension();
-                $file->move('assets/images/news/postImgs',$filename);
-                $path='assets/images/news/postImgs'.$filename;
+                $file->move('assets/images/news/postImgs/',$filename);
+                $path='assets/images/news/postImgs/'.$filename;
                 $new->img=$path;
 
             }
@@ -43,7 +61,7 @@ class Blog_Controller extends Controller
         $new->active='1';
         $new->tag=$request->tag;
         $new->save();
-        return back();
+        return back()->with('newBlog','Məqaləniz dərc olundu!');
 
     }
 }

@@ -1,7 +1,5 @@
 @extends('layouts.index')
-					
-
-					<link rel="stylesheet" href="assets/css/post.css">
+					<link rel="stylesheet" href="{{url('assets/css/post.css')}}">
 @section('content')
 					<section id="path" class="col-md-12 col-sm-12 col-xs-12">
 						
@@ -11,7 +9,7 @@
 								<span>></span>
 								<a href="index.html/#posts">Məqalələr</a>
 								<span>></span>
-								<a href="">Meqale adi</a>
+								<a href="">{{$blog->title}}</a>
 							</div>
 
 
@@ -25,54 +23,41 @@
 								
 								<div class="row">
 									
-									<h2 class="header">HOW TO GET BETTER AT LEARNING</h2>
+									<h2 class="header">{{$blog->title}}</h2>
 
 									<div class="userLine">
 
 										<i class="fa fa-user"></i>
-										<span> Henry H. Garrick</span>
+										<span>{{$user->name.' '.$user->surname}}</span>
 										
 										<div class="distance hidden-md hidden-xs"></div>
 
 										<i class="fa fa-folder-open"></i>
-										<a href="">Business</a>
-										<a href="">Design</a>
+										<a href="">{{$tag->name}}</a>
 											
 										<div class="distance hidden-md hidden-xs"></div>
 
 										<i class="fa fa-comments-o"></i>
-										<span>4 Comments</span>
+										<span>{{count($comments)}} şərh</span>
 										
 									</div>
 
 									<div class="post">
 										
-										<img src="assets/images/news/postImgs/post-1.jpg" class="img img-responsive">
+										<img src="../{{$blog->img}}" class="img img-responsive">
 										
 										<div class="content">
 
-											<p class="text">Lommodo ligula eget dolor. Aenean massa. Cum sociis que penatibus et magnis dis parturient montes lorem, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla onsequat massa quis enim. Donec pede justo fringilla vel aliquet nec vulputate eget. Lorem ispum dolore siamet ipsum dolor.Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumquer nihil impedit quo minus id quod maxime placeat facere. At vero eos et accusamus et iusto odio dignissimos ducimus quilor.</p>
+											<p class="text">{{$blog->content}}</p>
 
-
-											<blockquote>You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.</blockquote>
-
-											<p class="text">
-												Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-											</p>
-
-
-											<p class="text">
-												Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer cidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae lorem.
-											</p>
 										</div>
 
 										<div class="tags col-md-12 col-xs-12 col-sm-12">
 
 											<div class="row">
-												<h4>TAGS:</h4>
+												<h4>MÖVZU:</h4>
 
-												<a href="">Education</a>
-												<a href="">working</a>
+												<a href="">{{$tag->name}}</a>
 												
 												<i class="fa fa-google-plus pull-right"></i>
 												<i class="fa fa-twitter pull-right"></i>
@@ -86,12 +71,12 @@
 											<div class="row">
 
 												<div class="col-md-2">
-													<img src="assets/images/avatars/1.png" alt="">
+													<img src="../{{$user->avatar}}" alt="">
 												</div>
 
 												<div class="col-md-10">
 
-													<h4 class="name">HENRY H. GARRICK</h4>
+													<h4 class="name">{{$user->name.' '.$user->surname}}</h4>
 
 													<div class="line"></div>
 
