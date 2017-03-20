@@ -204,15 +204,15 @@
 		</div>
 </body>
 
-	<script src="{{url('assets/js/fmCourses.js')}}"></script>
-	<script src="{{url('assets/js/mobileMenu.js')}}"></script>
-	<script src="{{url('assets/js/fmPost.js')}}"></script>
-	<script src="{{url('assets/js/mobileMenu.js')}}"></script>
-	<script src="{{url('assets/js/fixedMenu.js')}}"></script>
-	<script src="{{url('assets/js/mobileMenu.js')}}"></script>
-	<script src="{{url('assets/js/scrollSlow.js')}}"></script>
-	<script src="{{url('assets/js/whatSay.js')}}"></script>
-	<script src="{{url('assets/js/slider.js')}}"></script>
+	<script src="assets/js/fmCourses.js"></script>
+	<script src="assets/js/mobileMenu.js"></script>
+	<script src="assets/js/fmPost.js')}}"></script>
+	<script src="assets/js/mobileMenu.js"></script>
+	<script src="assets/js/fixedMenu.js"></script>
+	<script src="assets/js/mobileMenu.js"></script>
+	<script src="assets/js/scrollSlow.js"></script>
+	<script src="assets/js/whatSay.js"></script>
+	<script src="assets/js/slider.js"></script>
 </html>
 
 

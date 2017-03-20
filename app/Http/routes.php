@@ -81,6 +81,7 @@ if(isset($_SESSION['userTrue'])){
 
     // Blog--------------------------------
     Route::get('/blog/{id}','Blog_Controller@show');
+    Route::get('/blog/delete/{id}','Blog_Controller@delete');
 
 
 }

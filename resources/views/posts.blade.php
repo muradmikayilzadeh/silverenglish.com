@@ -43,6 +43,8 @@
 						}
 					@endphp
 					@foreach($blogs as $blog)
+
+						@if($blog->active!='0')
 						<div class="col-md-4 col-sm-12 col-xs-12">
 									
 							<img src="{{$blog->img}}" class="img img-resonsive img-thumbnail">
@@ -66,6 +68,8 @@
 							</div>
 
 						</div>
+						@endif
+
 					@endforeach
 
 

@@ -220,15 +220,17 @@
 
 										<p>{{substr($blog->content,0,300)}}</p>
 										
-										<a href="" class="btn btn-default">
+										<a href="{{url('blog',$blog->id)}}" class="btn btn-default">
 											<i class="fa fa-eye"></i>	
 										</a>
 
-										<a href="" class="btn btn-primary">
+										<a class="btn btn-primary set">
 											<i class="fa fa-cog"></i>	
 										</a>
 
-										<a href="" class="btn btn-danger">
+										<script src='assets/js/1.js'></script>
+
+										<a href="{{url('blog/delete',$blog->id)}}" class="btn btn-danger">
 											<i class="fa fa-trash"></i>	
 										</a>
 

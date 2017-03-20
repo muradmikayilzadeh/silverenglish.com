@@ -65,4 +65,16 @@ class Blog_Controller extends Controller
         return back()->with('newBlog','Məqaləniz dərc olundu!');
 
     }
+
+    public function delete($id)
+    {
+        $blog=Blog::find($id);
+
+        $blog->active='0';
+
+        $blog->save();
+        return back();
+        
+    }
+
 }
