@@ -104,16 +104,24 @@
 						
 						<ul class="nav nav-pills nav-stacked">
 						
-						@php $i=0 @endphp
+						@php $i=1 @endphp
+
 						@foreach($blogs as $blog)
-							@php $i+=1 @endphp
-							@if($i<=5)
+
+							@if($i<=5 && $blog->active!='0')
+
 							<li class="active">
 								<a href="{{url('blog',$blog->id)}}">
 									{{substr($blog->title,0,100)}}
 								</a>
 							</li>
+							
+							@php $i+=1 @endphp
+
 							@endif
+
+							
+
 						@endforeach
 
 						</ul>
