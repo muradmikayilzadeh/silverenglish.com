@@ -14,7 +14,7 @@ class Profile_Controller extends Controller
     {
     	$userData=User::find($_SESSION['userTrue']);
 
-        $blogs=Blog::where('user_id',$_SESSION['userTrue'])->get();
+        $blogs=Blog::where('user_id',$_SESSION['userTrue'])->orderBy('created_at','desc')->get();
 
         $tags=Tag::all();
 

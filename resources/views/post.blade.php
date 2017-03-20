@@ -80,14 +80,8 @@
 
 													<div class="line"></div>
 
-													<p class="about">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labo riosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure rep</p>
-
-													<div class="social">
-														<i class="fa fa-facebook"></i>
-														<i class="fa fa-twitter"></i>
-														<i class="fa fa-instagram"></i>
-														<i class="fa fa-youtube"></i>
-													</div>
+													<p class="about">{{$user->desc}}</p>
+													<br><br>
 
 												</div>
 

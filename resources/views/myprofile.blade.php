@@ -104,12 +104,16 @@
 						
 						<ul class="nav nav-pills nav-stacked">
 						
+						@php $i=0 @endphp
 						@foreach($blogs as $blog)
+							@php $i+=1 @endphp
+							@if($i<=5)
 							<li class="active">
-								<a href="">
+								<a href="{{url('blog',$blog->id)}}">
 									{{substr($blog->title,0,100)}}
 								</a>
 							</li>
+							@endif
 						@endforeach
 
 						</ul>
@@ -179,6 +183,63 @@
 							<input type="submit" class="btn btn-success" value="Dərc et">
  
 						</form>
+
+					</div>
+
+
+					<div id="blogs" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
+						
+						<h2><div class="container">Bütün məqalələriniz</div></h2>
+
+						<br>
+
+						@php
+							function zaman($vaxt){
+
+								$aylar=['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avqust','Sentyabr','Oktyabr','Dekabr'];
+
+								$ay=explode('-',$vaxt);
+								$saat=explode(' ', $ay[2]);
+
+								return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
+
+							}
+						@endphp
+						
+						@foreach($blogs as $blog)
+							@if($blog->active!='0')
+							<div class="col-md-4 col-sm-6 col-xs-12">
+							
+								<div class="thumbnail">
+
+									<img src="../{{$blog->img}}" class="img img-responsive">	
+
+									<div class="caption">
+										
+										<h3><b>{{$blog->title}}</b> <small>{{zaman($blog->created_at)}}</small></h3>
+
+										<p>{{substr($blog->content,0,300)}}</p>
+										
+										<a href="" class="btn btn-default">
+											<i class="fa fa-eye"></i>	
+										</a>
+
+										<a href="" class="btn btn-primary">
+											<i class="fa fa-cog"></i>	
+										</a>
+
+										<a href="" class="btn btn-danger">
+											<i class="fa fa-trash"></i>	
+										</a>
+
+									</div>
+
+								</div>
+
+							</div>
+							@endif
+
+						@endforeach
 
 					</div>
 

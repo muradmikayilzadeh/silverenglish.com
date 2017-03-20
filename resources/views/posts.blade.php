@@ -45,11 +45,11 @@
 					@foreach($blogs as $blog)
 						<div class="col-md-4 col-sm-12 col-xs-12">
 									
-							<img src="{{$blog->img}}" class="img img-resonsive">
+							<img src="{{$blog->img}}" class="img img-resonsive img-thumbnail">
 
 							<h3>
 
-									<a href="{{url('blog',$blog->id)}}">{{$blog->title}}</a>
+									<a href="{{url('blog',$blog->id)}}">{{substr($blog->title,0,25)}}@if(strlen($blog->title)>25)...@endif</a>
 
 							</h3>
 

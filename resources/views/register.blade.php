@@ -35,15 +35,25 @@
 				<form action="{{url('register/save')}}" method="post" enctype="multipart/form-data">
 					{{csrf_field()}}
 					<input type="text" placeholder="Adınız" class="form-control" name="name">
+
 					<br>
+
 					<input type="text" placeholder="Soyadınız" class="form-control" name="surname">
+
 					<br>
+
+					<textarea name="desc" class="form-control" maxlength="200" placeholder="Özünüzü 200 simvoldan çox olmayaraq ifadə edin"></textarea>
+
+					<br>
+
 					<input type="file" class="form-control" name="avatar">
 					
 					<br>
 						
 					<input type="email" placeholder="E-poçt ünvanınız" class="form-control" name="email">
+
 					<br>
+
 					<input type="password" placeholder="Şifrəniz" class="form-control" name="password">
 
 					<input type="submit" class="button" value="Qeydiyyatdan keç">

@@ -17,6 +17,7 @@ class Register_Controller extends Controller
     	$this->validate($request,[
                 'name'=>'required',
                 'surname'=>'required',
+                'desc'=>'required',
                 'email'=>'required',
                 'password'=>'required',
                 'avatar'=>'required',
@@ -28,7 +29,8 @@ class Register_Controller extends Controller
     	$new->email=$request->email;
     	$new->password=md5($request->password);
     	$new->name=$request->name;
-    	$new->surname=$request->surname;
+        $new->surname=$request->surname;
+    	$new->desc=$request->desc;
 
     	if($request->hasFile('avatar')){
 
