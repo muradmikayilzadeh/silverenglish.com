@@ -232,10 +232,6 @@
 											<i class="fa fa-eye"></i>	
 										</a>
 
-										<a class="btn btn-primary set">
-											<i class="fa fa-cog"></i>	
-										</a>
-
 										<script src='assets/js/1.js'></script>
 
 										<a href="{{url('blog/delete',$blog->id)}}" class="btn btn-danger">
