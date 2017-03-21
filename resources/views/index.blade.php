@@ -39,36 +39,36 @@
 									
 									<div class="row">
 										
-										<h2 class="header">Guzel</h2>
+										<h2 class="header">Xüsusiyyətlərimiz</h2>
 										<div class="line"></div>
 										<p class="text">
-											Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+											Biz online dərslər verən bir dil kursuyuq. Məqsədimiz ...
 										</p>
 
 
-										<div class="col-md-4">
+										<div class="col-md-4 col-sm-4 col-xs-4">
 											
 											<div class="row">
 												<img src="assets/images/community/il.png" alt="">
-												<p>INDUSTRY LEADER</p>
+												<p>ONLINE DƏRSLƏR</p>
 											</div>
 
 										</div>
 
-										<div class="col-md-4">
+										<div class="col-md-4 col-sm-4 col-xs-4">
 											
 											<div class="row">
 												<img src="assets/images/community/sr.png" alt="">
-												<p>ONLINE COURSES & TRANING</p>
+												<p>MƏQALƏLƏR</p>
 											</div>
 
 										</div>
 
-										<div class="col-md-4">
+										<div class="col-md-4 col-sm-4 col-xs-4">
 											
 											<div class="row">
 												<img src="assets/images/community/qf.png" alt="">
-												<p>QUALIFIED FALCUTY</p>
+												<p>SERTİFİKAT</p>
 											</div>
 
 										</div>
@@ -330,119 +330,71 @@
 
 					<section id="news" class="col-md-12 col-xs-12 col-sm-12">
 						
-
+				
 							<div class="container">
 
 
 								<h2 class="header">SON MƏQALƏLƏR</h2>
 								<div class="line"></div>
+								
+								@php
+									function zaman($vaxt){
 
-								<div class="col-md-4 col-sm-12 col-xs-12">
+										$aylar=['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avqust','Sentyabr','Oktyabr','Dekabr'];
+
+										$ay=explode('-',$vaxt);
+										$saat=explode(' ', $ay[2]);
+
+										return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
+
+									}
+								@endphp
+
+
+
+								@php $i=1 @endphp
+
+								@foreach($blogs as $blog)
+
+									@if($i<=3 && $blog->active!='0')
+										
+										<div class="col-md-4 col-sm-12 col-xs-12">
 									
-										<img src="assets/images/news/1.jpg" class="img img-resonsive">
+												<img src="{{$blog->img}}" class="img img-responsive img-thumbnail">
 
-										<h3>
+												<h3>
 
-												<a href="">How to get better at Learning</a>
+														<a href="{{url('blog',$blog->id)}}">{{$blog->title}}</a>
 
-										</h3>
+												</h3>
 
-										<div class="downBox">
+												<div class="downBox">
 
 
-												<div class="time">
+														<div class="time">
 
-													<i class="fa fa-clock-o"></i>
-													<span>November 16,2016</span>
+															<i class="fa fa-clock-o"></i>
+															<span>{{zaman($blog->created_at)}}<span>
 
-												</div>
-
-												
-												<div class="comment">
-
-													<i class="fa fa-comments-o"></i>
-													<span>No Comment</span>
+														</div>
 
 												</div>
-
 
 										</div>
-
-								</div>
-
-								<div class="col-md-4 col-sm-12 col-xs-12">
 									
-										<img src="assets/images/news/2.jpg" class="img img-resonsive">
-
-										<h3>
-
-												<a href="">The future of Web Design</a>
-
-										</h3>
-
-										<div class="downBox">
-
-
-												<div class="time">
-
-													<i class="fa fa-clock-o"></i>
-													<span>November 11,2016</span>
-
-												</div>
-
-												
-												<div class="comment">
-
-													<i class="fa fa-comments-o"></i>
-													<span>3 Comments</span>
-
-												</div>
-
-
-										</div>
-
-								</div>
-
-								<div class="col-md-4 col-sm-12 col-xs-12">
 									
-										<img src="assets/images/news/3.jpg" class="img img-resonsive">
+									@php $i+=1 @endphp
 
-										<h3>
+									@endif
 
-												<a href="">Tips for being better Musician</a>
-
-										</h3>
-
-										<div class="downBox">
-
-
-												<div class="time">
-
-													<i class="fa fa-clock-o"></i>
-													<span>November 11,2016</span>
-
-												</div>
-
-												
-												<div class="comment">
-
-													<i class="fa fa-comments-o"></i>
-													<span>6 Comments</span>
-
-												</div>
-
-
-										</div>
-
-								</div>
-
+								@endforeach
 
 							</div>
 							
 							<br><br><br>
 
 							<div class="col-md-12 text-center">
-								<button class="viewAll">VIEW ALL POSTS</button>
+								<button href="{{url('bloghome')}}" class="viewAll">VIEW ALL POSTS</button>
 							</div>
 
 
@@ -485,78 +437,10 @@
 					</section>
 
 
-					<section id="extra" class="col-md-12 col-xs-12 col-sm-12">
-						
+					<section id="extra" class="col-md-12 col-xs-12 col-sm-12"></section>
 
-							<div class="container">
-								
-									<div class="col-md-6 col-sm-12 col-xs-12">
-										
-											<div class="forum col-md-12 col-sm-12 col-xs-12">
-												
-												<div class="col-md-2 col-sm-2 col-xs-2">
-
-													<div class="row">
-														
-														<img src="assets/images/extra/teacher.png" alt="">
-														
-													</div>
-
-												</div>
-
-												<div class="col-md-10 col-sm-10 col-xs-10">
-
-													<h3>BECOME A TEACHER</h3>
-													<p class="text">
-														Sed ut perspiciatis unde omnis iste natus error sit lorem dol voluptatem accusantium doloremque laudantium.
-													</p>
-
-
-													<a href="">LEARN MORE</a>
-
-												</div>
-
-											</div>
-
-									</div>
-
-									<div class="col-md-6 col-sm-12 col-xs-12">
-										
-											<div class="contact col-md-12 col-sm-12 col-xs-12">
-												
-												<div class="col-md-2 col-sm-2 col-xs-2">
-
-													<div class="row">
-														
-														<img src="assets/images/extra/contact.png" alt="">
-
-													</div>
-
-												</div>
-
-												<div class="col-md-10 col-sm-10 col-xs-10">
-
-													<h3>BECOME A TEACHER</h3>
-													<p class="text">
-														Sed ut perspiciatis unde omnis iste natus error sit lorem dol voluptatem accusantium doloremque laudantium.
-													</p>
-
-
-													<a href="">CONTACT US NOW</a>
-
-												</div>
-
-											</div>
-
-									</div>
-
-							</div>
-
-
-					</section>
-
-<script src="{{url('assets/js/fixedMenu.js')}}"></script>
-<script src="{{url('assets/js/mobileMenu.js')}}"></script>
+{{-- <script src="{{url('assets/js/fixedMenu.js')}}"></script> --}}
+{{-- <script src="{{url('assets/js/mobileMenu.js')}}"></script> --}}
 <script src="{{url('assets/js/scrollSlow.js')}}"></script>
 <script src="{{url('assets/js/whatSay.js')}}"></script>
 <script src="{{url('assets/js/slider.js')}}"></script>

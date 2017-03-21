@@ -14,9 +14,7 @@
 session_start();
 
 // -----------------Web appin sehifeleri
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','IndexPage_Controller@index');
 
 
 Route::get('/courses', function () {

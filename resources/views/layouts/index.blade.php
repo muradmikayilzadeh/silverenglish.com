@@ -204,7 +204,7 @@
 		</div>
 </body>
 
-	<script src="assets/js/fmCourses.js"></script>
+{{-- 	<script src="assets/js/fmCourses.js"></script>
 	<script src="assets/js/mobileMenu.js"></script>
 	<script src="assets/js/fmPost.js')}}"></script>
 	<script src="assets/js/mobileMenu.js"></script>
@@ -212,7 +212,7 @@
 	<script src="assets/js/mobileMenu.js"></script>
 	<script src="assets/js/scrollSlow.js"></script>
 	<script src="assets/js/whatSay.js"></script>
-	<script src="assets/js/slider.js"></script>
+	<script src="assets/js/slider.js"></script> --}}
 </html>
 
 
