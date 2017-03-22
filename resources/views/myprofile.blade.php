@@ -224,7 +224,7 @@
 
 									<div class="caption">
 										
-										<h3><b>{{$blog->title}}</b> <small>{{zaman($tblog->created_at)}}</small></h3>
+										<h3><b>{{$blog->title}}</b> <small>{{zaman($blog->created_at)}}</small></h3>
 
 										<p>{{substr($blog->content,0,300)}}</p>
 										
