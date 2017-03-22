@@ -81,6 +81,16 @@ if(isset($_SESSION['userTrue'])){
     Route::get('/blog/{id}','Blog_Controller@show');
     Route::get('/blog/delete/{id}','Blog_Controller@delete');
 
+    // Comment yazmaq
+    Route::post('/newcomment','Blog_Controller@newComment');
+
+    // Comment silmek 
+    Route::get('/deletecomment/{id}','Blog_Controller@deleteComment');
+
+    // Reply Comment yazmaq
+    Route::post('/newreply','Blog_Controller@newReply');
+
+
 
 }
 

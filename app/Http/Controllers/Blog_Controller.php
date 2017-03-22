@@ -23,10 +23,11 @@ class Blog_Controller extends Controller
     public function show($id)
     {
         $blog=Blog::find($id);
+        $blogs=Blog::all();
         $user=User::find($blog->user_id);
         $tag=Tag::find($blog->tag);
         $comments=Comments::where('post_id',$id)->get();
-        return view('post',compact('blog','user','tag','comments'));
+        return view('post',compact('blog','user','tag','comments','blogs'));
     }
 
     public function newBlog(Request $request)
@@ -75,6 +76,43 @@ class Blog_Controller extends Controller
         $blog->save();
         return back();
         
+    }
+
+
+    public function newComment(Request $request)
+    {
+        $new=new Comments;
+        $new->user_id=$_SESSION['userTrue'];
+        $new->post_id=$request->blog;
+        $new->replied_id='0';
+        $new->content=$request->content;
+
+        $new->save();
+
+        return back();
+
+    }
+
+
+    public function deleteComment($id)
+    {
+        $comment=Comments::find($id);
+        $comment->delete();
+        return back();
+    }
+
+    public function newReply(Request $request)
+    {
+        $new=new Comments;
+
+        $new->user_id=$_SESSION['userTrue'];
+        $new->post_id=$request->blog;
+        $new->replied_id=$request->replied;
+        $new->content=$request->content;
+
+        $new->save();
+
+        return back();
     }
 
 }
