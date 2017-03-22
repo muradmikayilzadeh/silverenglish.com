@@ -23,11 +23,14 @@ class Blog_Controller extends Controller
     public function show($id)
     {
         $blog=Blog::find($id);
-        $blogs=Blog::all();
+        $blogs=Blog::orderBy('created_at','desc')->get();
         $user=User::find($blog->user_id);
         $tag=Tag::find($blog->tag);
+        $tags=Tag::all();
         $comments=Comments::where('post_id',$id)->get();
-        return view('post',compact('blog','user','tag','comments','blogs'));
+
+
+        return view('post',compact('blog','user','tag','comments','blogs','tags'));
     }
 
     public function newBlog(Request $request)

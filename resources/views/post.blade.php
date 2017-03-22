@@ -231,54 +231,43 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 			<div class="sidebar col-md-12">
 				
 				<div class="search">
-					<h4 class="header">SEARCH</h4>
+					<h4 class="header">AXTAR</h4>
 					<div class="line"></div>
 					<form action="">
-						<input type="text" placeholder="Enter keyword...">
+						<input type="text" placeholder="Açar sözlər...">
 					</form>
 				</div>
-				<div class="category">
-					<h4 class="header">CATEGORY</h4>
-					<div class="line"></div>
-					<ul>
-						<li>BUSINESS</li>
-						<li>DESIGN</li>
-						<li>FILM</li>
-						<li>MUSIC</li>
-						<li>TRENDING</li>
-					</ul>
-				</div>
 				<div class="latestPost">
-					<h4 class="header">LATEST POST</h4>
+
+					<h4 class="header">ƏN SON MƏQALƏLƏR</h4>
+
 					<div class="line"></div>
+					
+					@php $i=1 @endphp
+					@foreach($blogs as $blog)
+					@if($i<=3 && $blog->active!='0')
 					<div class="post">
-						<img src="assets/images/news/1.jpg" alt="">
-						<h4>How to get better at Learning</h4>
+						<img src="../{{$blog->img}}" alt="">
+						<h4>{{substr($blog->title,0,31)}}</h4>
 					</div>
-					<div class="post">
-						<img src="assets/images/news/2.jpg" alt="">
-						<h4>The future of Web Design</h4>
-					</div>
-					<div class="post">
-						<img src="assets/images/news/3.jpg" alt="">
-						<h4>Tips for being better Musician</h4>
-					</div>
+					
+					@php $i+=1 @endphp
+					@endif
+					
+					@endforeach
+
 				</div>
 				<div class="tags">
-					
-					<h4 class="header">ETIKETLƏR</h4>
+
+					<h4 class="header">MÖVZULAR</h4>
 					<div class="line"></div>
-					<a href="" class="tag">BRAINSTORM</a>
-					<a href="" class="tag">DORO</a>
-					<a href="" class="tag">EDUCATION</a>
-					<a href="" class="tag">IOS</a>
-					<a href="" class="tag">IPSUM</a>
-					<a href="" class="tag">LOCAL</a>
-					<a href="" class="tag">LOREM</a>
-					<a href="" class="tag">SDK</a>
-					<a href="" class="tag">WORDPRESS</a>
-					<a href="" class="tag">WORKING</a>
-					<a href="" class="tag">XCODE</a>
+
+					@foreach($tags as $tag)
+						
+						<a href="" class="tag">{{$tag->name}}</a>
+
+					@endforeach
+					
 				</div>
 			</div>
 		</div>
