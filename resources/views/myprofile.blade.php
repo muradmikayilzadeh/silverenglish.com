@@ -165,9 +165,9 @@
 				
 				@foreach($blogs as $blog)
 				@if($blog->active!='0')
-				<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="col-md-4 col-sm-6 col-xs-12" style="display: inline-block;">
 					
-					<div class="thumbnail">
+					<div class="thumbnail" style="display: inline-block;">
 						<img src="../{{$blog->img}}" class="img img-responsive">
 						<div class="caption">
 							

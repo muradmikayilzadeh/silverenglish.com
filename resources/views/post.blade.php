@@ -76,12 +76,13 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 							</div>
 						</div>
 					</div>
-					<div class="also col-md-12 col-sm-12 col-xs-12">
+					{{-- <div class="also col-md-12 col-sm-12 col-xs-12">
 						<div class="row">
 							<h4 class="header">YOU MIGHT ALSO LIKE</h4>
 							<div class="line"></div>
 						
 							@foreach($blogs as $blog)
+
 							<div class="col-md-4 col-sm-12 col-xs-12 center-md">
 								<img src="assets/images/news/1.jpg" class="img img-resonsive">
 								<h3>
@@ -94,10 +95,11 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 									</div>
 								</div>
 							</div>
+							
 							@endforeach
 
 						</div>
-					</div>
+					</div> --}}
 					
 					<div class="leaveComment col-md-12 col-sm-12 col-xs-12">
 						<div class="row">
