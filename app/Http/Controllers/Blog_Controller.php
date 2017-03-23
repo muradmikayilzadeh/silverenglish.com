@@ -118,4 +118,13 @@ class Blog_Controller extends Controller
         return back();
     }
 
+    public function tagBlog($id)
+    {
+        
+        $blogs=Blog::where('tag',$id)->get();
+
+        return view('blogtag',compact('blogs'));
+
+    }
+
 }

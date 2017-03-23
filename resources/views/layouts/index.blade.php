@@ -70,7 +70,7 @@
 											<ul class="computer">
 
 												<li>
-													<a href="">
+													<a href="{{url('/')}}">
 														<i class="fa fa-home"></i>
 														Ana səhifə
 													</a>
@@ -78,41 +78,34 @@
 
 
 												<li>
-													<a href="#price">Dərslər</a>
+													<a href="{{url('/#price')}}">Dərslər</a>
 												</li>
 
 
 												<li>
-													<a href="#team">
+													<a href="{{url('/#team')}}">
 														Komandamız
 													</a>
 												</li>
 
 
 												<li>
-													<a href="#events">
+													<a href="{{url('/courses')}}">
 														Kurslar	
 													</a>
 												</li>
 
 
 												<li>
-													<a href="#news">
+													<a href="{{url('/#news')}}">
 														Məqalələr
 													</a>
 												</li>
 
 
 												<li>
-													<a href="#whatsayaboutus">
+													<a href="{{url('/#whatsayaboutus')}}">
 														Fikirlər
-													</a>
-												</li>
-
-
-												<li>
-													<a href="#extra">
-														Əlavə
 													</a>
 												</li>
 
@@ -128,7 +121,7 @@
 											<ul class="mobile col-md-12 col-sm-12 col-xs-12">
 
 												<li>
-													<a href="">
+													<a href="{{url('/')}}">
 														<i class="fa fa-home"></i>
 														Ana səhifə
 													</a>
@@ -136,43 +129,37 @@
 
 
 												<li>
-													<a href="#price">Dərslər</a>
+													<a href="{{url('/#price')}}">Dərslər</a>
 												</li>
 
 
 												<li>
-													<a href="#team">
+													<a href="{{url('/#team')}}">
 														Komandamız
 													</a>
 												</li>
 
 
 												<li>
-													<a href="#events">
-														Kurslar
+													<a href="{{url('/courses')}}">
+														Kurslar	
 													</a>
 												</li>
 
 
 												<li>
-													<a href="#news">
+													<a href="{{url('/#news')}}">
 														Məqalələr
 													</a>
 												</li>
 
 
 												<li>
-													<a href="#whatsayaboutus">
+													<a href="{{url('/#whatsayaboutus')}}">
 														Fikirlər
 													</a>
 												</li>
-
-
-												<li>
-													<a href="#extra">
-														Əlavə
-													</a>
-												</li>
+												
 											</ul>
 									</div>
 

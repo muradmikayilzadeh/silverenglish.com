@@ -1,5 +1,5 @@
 @extends('layouts.index')
-<link rel="stylesheet" href="assets/css/course.css">
+<link rel="stylesheet" href="{{url('assets/css/course.css')}}">
 @section('content')
 
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">

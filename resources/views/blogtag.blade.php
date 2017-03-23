@@ -27,11 +27,17 @@
 		return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 		}
 		@endphp
+
+		<br>
+		<h2><b>Mövzu</b> <small>Komputer Programlasdirma</small></h2>
+		
 		@foreach($blogs as $blog)
+		
 		@if($blog->active!='0')
+
 		<div class="col-md-4 col-sm-12 col-xs-12">
 			
-			<img src="{{$blog->img}}" class="img img-resonsive img-thumbnail">
+			<img src="../{{$blog->img}}" class="img img-resonsive img-thumbnail">
 			<h3>
 			<a href="{{url('blog',$blog->id)}}">{{substr($blog->title,0,25)}}@if(strlen($blog->title)>25)...@endif</a>
 			</h3>
@@ -41,9 +47,13 @@
 					<span>{{zaman($blog->created_at)}}</span>
 				</div>
 			</div>
+
 		</div>
+
 		@endif
+
 		@endforeach
+
 	</div>
 </section>
 @stop

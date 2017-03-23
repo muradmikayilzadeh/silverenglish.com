@@ -38,7 +38,7 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 					
 					<div class="distance hidden-md hidden-xs"></div>
 					<i class="fa fa-folder-open"></i>
-					<a href="">{{$tag->name}}</a>
+					<a href="{{url('/tag',$tag->id)}}">{{$tag->name}}</a>
 					
 					<div class="distance hidden-md hidden-xs"></div>
 					<i class="fa fa-comments-o"></i>
@@ -55,7 +55,7 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 					<div class="tags col-md-12 col-xs-12 col-sm-12">
 						<div class="row">
 							<h4>MÖVZU:</h4>
-							<a href="">{{$tag->name}}</a>
+							<a href="{{url('/tag',$tag->id)}}">{{$tag->name}}</a>
 							
 							<i class="fa fa-google-plus pull-right"></i>
 							<i class="fa fa-twitter pull-right"></i>
@@ -244,7 +244,9 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 					<div class="line"></div>
 					
 					@php $i=1 @endphp
+
 					@foreach($blogs as $blog)
+
 					@if($i<=3 && $blog->active!='0')
 					<div class="post">
 						<img src="../{{$blog->img}}" alt="">
@@ -252,6 +254,7 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 					</div>
 					
 					@php $i+=1 @endphp
+
 					@endif
 					
 					@endforeach
@@ -264,7 +267,7 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 
 					@foreach($tags as $tag)
 						
-						<a href="" class="tag">{{$tag->name}}</a>
+						<a href="{{url('/tag',$tag->id)}}" class="tag">{{$tag->name}}</a>
 
 					@endforeach
 					

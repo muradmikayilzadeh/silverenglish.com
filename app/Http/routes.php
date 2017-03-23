@@ -25,7 +25,6 @@ Route::get('/courses', function () {
     }
 });
 
-
 Route::get('/course', function () {
     if(isset($_SESSION['userTrue'])){
     	return view('course');
@@ -91,6 +90,10 @@ if(isset($_SESSION['userTrue'])){
     Route::post('/newreply','Blog_Controller@newReply');
 
 
+    // Bloglarda tag sistemi
+    // Tag sehifeleri
+    Route::get('/tag/{id}','Blog_Controller@tagBlog');
+    
 
 }
 
