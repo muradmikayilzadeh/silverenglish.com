@@ -63,6 +63,7 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 								data-open-share="facebook"
 								data-open-share-link="{{url('/blog',$blog->id)}}"
 								data-open-share-picture="{{url($blog->img)}}"
+								data-open-share-description="{{substr($blog->content,0,300)}}"
 								></i>
 							<i class="fa fa-twitter pull-right"></i>
 							<i class="fa fa-facebook pull-right"></i>
