@@ -59,11 +59,11 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 							<h4>MÖVZU:</h4>
 							<a href="{{url('/tag',$tag->id)}}">{{$tag->name}}</a>
 							
-							<a class="fa fa-google-plus pull-right" 
+							<i class="fa fa-google-plus pull-right" 
 								data-open-share="facebook"
 								data-open-share-link="{{url('/blog',$blog->id)}}"
 
-								></a>
+								></i>
 							<i class="fa fa-twitter pull-right"></i>
 							<i class="fa fa-facebook pull-right"></i>
 						</div>
