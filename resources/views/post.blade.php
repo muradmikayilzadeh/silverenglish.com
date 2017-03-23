@@ -62,7 +62,7 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 							<i class="fa fa-google-plus pull-right" 
 								data-open-share="facebook"
 								data-open-share-link="{{url('/blog',$blog->id)}}"
-
+								data-open-share-picture="../{{$blog->img}}"
 								></i>
 							<i class="fa fa-twitter pull-right"></i>
 							<i class="fa fa-facebook pull-right"></i>
