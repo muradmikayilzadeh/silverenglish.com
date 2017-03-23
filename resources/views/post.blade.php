@@ -60,14 +60,28 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 							<a href="{{url('/tag',$tag->id)}}">{{$tag->name}}</a>
 							
 							<i class="fa fa-google-plus pull-right" 
-								data-open-share="facebook"
+								data-open-share="google"
 								data-open-share-link="{{url('/blog',$blog->id)}}"
-								data-open-share-caption="{{$blog->title}}"
 								data-open-share-picture="{{url($blog->img)}}"
 								data-open-share-description="{{substr($blog->content,0,300)}}"
 								></i>
-							<i class="fa fa-twitter pull-right"></i>
-							<i class="fa fa-facebook pull-right"></i>
+
+
+							<i class="fa fa-twitter pull-right"
+								data-open-share="twitter"
+								data-open-share-link="{{url('/blog',$blog->id)}}"
+								data-open-share-picture="{{url($blog->img)}}"
+								data-open-share-description="{{substr($blog->content,0,300)}}"
+								></i>
+
+
+							<i class="fa fa-facebook pull-right"
+								data-open-share="facebook"
+								data-open-share-link="{{url('/blog',$blog->id)}}"
+								data-open-share-picture="{{url($blog->img)}}"
+								data-open-share-description="{{substr($blog->content,0,300)}}"
+								></i>
+
 						</div>
 					</div>
 					<div class="author center-md">
