@@ -1,5 +1,7 @@
 @extends('layouts.index')
 <link rel="stylesheet" href="{{url('assets/css/post.css')}}">
+ <script src='https://cdn.rawgit.com/OpenShare/openshare/master/dist/openshare.js'></script>
+
 @php
 use App\User;
 use App\Comments;
@@ -57,7 +59,11 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 							<h4>MÖVZU:</h4>
 							<a href="{{url('/tag',$tag->id)}}">{{$tag->name}}</a>
 							
-							<i class="fa fa-google-plus pull-right"></i>
+							<a class="fa fa-google-plus pull-right" 
+								data-open-share="facebook"
+								data-open-share-link="{{url('/blog',$blog->id)}}"
+
+								></a>
 							<i class="fa fa-twitter pull-right"></i>
 							<i class="fa fa-facebook pull-right"></i>
 						</div>
@@ -75,31 +81,8 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 								<br><br>
 							</div>
 						</div>
+
 					</div>
-					{{-- <div class="also col-md-12 col-sm-12 col-xs-12">
-						<div class="row">
-							<h4 class="header">YOU MIGHT ALSO LIKE</h4>
-							<div class="line"></div>
-						
-							@foreach($blogs as $blog)
-
-							<div class="col-md-4 col-sm-12 col-xs-12 center-md">
-								<img src="assets/images/news/1.jpg" class="img img-resonsive">
-								<h3>
-								<a href="">How to get better at Learning</a>
-								</h3>
-								<div class="downBox">
-									<div class="time">
-										<i class="fa fa-clock-o"></i>
-										<span>November 16,2016</span>
-									</div>
-								</div>
-							</div>
-							
-							@endforeach
-
-						</div>
-					</div> --}}
 					
 					<div class="leaveComment col-md-12 col-sm-12 col-xs-12">
 						<div class="row">
