@@ -83,7 +83,8 @@ class Blog_Controller extends Controller
 
 
     public function newComment(Request $request)
-    {
+    {   
+
         $new=new Comments;
         $new->user_id=$_SESSION['userTrue'];
         $new->post_id=$request->blog;
@@ -138,8 +139,6 @@ class Blog_Controller extends Controller
         foreach ($data as $text) {
             echo '<a href='.url('/blog/'.$text->id).'><li>'.$text->title.'</li></a>';
         }
-
-        // return $data;
 
     }
 
