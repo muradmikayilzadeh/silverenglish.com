@@ -29,7 +29,7 @@
 		@endphp
 
 		<br>
-		<h2><b>Mövzu</b> <small>Komputer Programlasdirma</small></h2>
+		<h2 style="margin-left: 15px"><b>Mövzu</b> <small>Komputer Programlasdirma</small></h2>
 		
 		@foreach($blogs as $blog)
 		

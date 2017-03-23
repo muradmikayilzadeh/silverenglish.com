@@ -18,9 +18,9 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">
 	
 	<div class="container">
-		<a href="index.html">Ana Səhifə</a>
+		<a href="{{url('/')}}">Ana Səhifə</a>
 		<span>></span>
-		<a href="index.html/#posts">Məqalələr</a>
+		<a href="{{url('/bloghome')}}">Məqalələr</a>
 		<span>></span>
 		<a href="">{{$blog->title}}</a>
 	</div>
