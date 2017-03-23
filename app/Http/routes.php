@@ -95,6 +95,10 @@ if(isset($_SESSION['userTrue'])){
     Route::get('/tag/{id}','Blog_Controller@tagBlog');
     
 
+    // Search sistemi
+    Route::get('/search/','Blog_Controller@search');
+
+
 }
 
 

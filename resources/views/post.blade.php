@@ -233,9 +233,52 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 				<div class="search">
 					<h4 class="header">AXTAR</h4>
 					<div class="line"></div>
-					<form action="">
-						<input type="text" placeholder="Açar sözlər...">
+					<form class="search">
+						<input type="text" name="search" placeholder="Açar sözlər...">
 					</form>
+
+					<ul class="result col-md-12">
+						
+						<div class="row">
+							
+						</div>
+
+					</ul>
+
+					<script>
+						
+						$('.search').keypress(function(event) {
+
+
+							var keyword=$('.search input').val()
+
+							if(keyword!=' ' || keyword!=''){
+
+								$.ajax({
+									url: '{{url('/search/')}}',
+									type: 'GET',
+									dataType:'text',
+									data: {keyword: keyword},
+								})
+								.done(function(data) {
+									
+									$('.result .row').html(data)
+
+								})
+								.fail(function() {
+									console.log("error");
+								})
+								.always(function() {
+									console.log("complete");
+								});
+
+							}
+							
+
+						});
+
+					</script>
+
 				</div>
 				<div class="latestPost">
 

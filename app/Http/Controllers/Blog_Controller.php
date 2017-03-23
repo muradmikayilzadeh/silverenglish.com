@@ -127,4 +127,20 @@ class Blog_Controller extends Controller
 
     }
 
+
+    public function search()
+    {
+        $keyword=$_GET['keyword'];
+
+        $data=Blog::where('title',$keyword)
+        ->orWhere('title','like','%'.$keyword.'%')->get();
+
+        foreach ($data as $text) {
+            echo '<a href='.url('/blog/'.$text->id).'><li>'.$text->title.'</li></a>';
+        }
+
+        // return $data;
+
+    }
+
 }

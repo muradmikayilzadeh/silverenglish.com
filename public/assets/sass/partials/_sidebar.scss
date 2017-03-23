@@ -18,11 +18,11 @@
 		}
 
 			.search{
-				border-bottom: 1px solid #DEDEDE;
 				.header{
 					margin-top: 0;
 				}
 				form{
+					border-bottom: 1px solid #DEDEDE;
 					input{
 						border:1px solid #DEDEDE;
 						background: none;
@@ -36,20 +36,6 @@
 						&:focus{
 							outline: none;
 						}
-					}
-				}
-			}
-
-			.category{
-				border-bottom: 1px solid #DEDEDE;
-				ul{
-					margin-top:20px;
-					padding:0;
-					li{
-						list-style: none;
-						font-family: 'Roboto',sans-serif;
-						font-weight: 600;
-						padding:5px 0px;
 					}
 				}
 			}
