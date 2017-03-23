@@ -137,7 +137,13 @@ class Blog_Controller extends Controller
         ->orWhere('title','like','%'.$keyword.'%')->get();
 
         foreach ($data as $text) {
-            echo '<a href='.url('/blog/'.$text->id).'><li>'.$text->title.'</li></a>';
+
+            if($text->active!='0'){
+
+                echo '<a href='.url('/blog/'.$text->id).'><li>'.$text->title.'</li></a>';
+
+            }
+
         }
 
     }
