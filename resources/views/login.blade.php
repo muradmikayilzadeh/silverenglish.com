@@ -32,6 +32,9 @@
 					<br>
 					<input type="password" placeholder="Şifrəniz" class="form-control" name="password">
 					<input type="submit" class="button" value="Giriş">
+
+					<input type="button" onclick="location.href='{{url('/register')}}'" class="button" value="Qeydiyyatdan keç">
+
 				</form>
 			</div>
 		</div>

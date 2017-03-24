@@ -14,7 +14,7 @@
 				<img src="{{$userData->avatar}}">
 				<h2>{{$userData->name.' '.$userData->surname}}</h2>
 			</div>
-			<div class="settings panel panel-default col-md-4 col-sm-6 col-xs-12">
+			<div id="settings" class="panel panel-default col-md-4 col-sm-6 col-xs-12">
 				
 				<h2>Tənzimləmələr</h2>
 				
@@ -76,7 +76,7 @@
 				</form>
 			</div>
 			
-			<div class="blogs panel panel-default col-md-7 col-sm-6 col-xs-12 col-md-offset-1">
+			<div id="blogs" class="panel panel-default col-md-7 col-sm-6 col-xs-12 col-md-offset-1">
 				
 				<h2>Ən Son Məqalələriniz</h2>
 				
@@ -96,8 +96,10 @@
 					
 					@endforeach
 				</ul>
+				<br>
 			</div>
-			<div class="writeBlog panel panel-default col-md-12 col-sm-12 col-xs-12">
+
+			<div id="writeBlog" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
 				
 				<h2>Məqalə Dərc Edin</h2>
 				
@@ -137,9 +139,8 @@
 							
 						</select>
 					</div>
-					
+					<br>
 					<div class="extra">
-						
 						<label for="photo">
 							<i class="fa fa-photo"></i>
 						</label>
@@ -150,8 +151,9 @@
 					
 				</form>
 			</div>
+
 			<div id="blogs" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
-				
+				<br>
 				<h2><div class="container">Bütün məqalələriniz</div></h2>
 				<br>
 				@php
@@ -187,6 +189,64 @@
 				@endif
 				@endforeach
 			</div>
+				
+			<div id="createCourse" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
+				
+				<br>
+				<h2><div class="container">Kurs Hazırlayın</div></h2>
+				<br>
+
+			</div>
+
+			<div id="courses" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
+				
+				<br>
+				<h2><div class="container">İzlədiyiniz Kurslar</div></h2>
+				
+				@php
+					use App\Courses;
+					use App\User;
+				@endphp
+				@foreach($watchedCourses as $wc)
+
+				<div class="course col-md-3 col-sm-6 col-xs-12">
+					
+					@php
+						$course=Courses::find($wc->user_id);
+						$author=User::find($course->instructor);
+					@endphp
+
+					<div class="body">
+						<img src="../{{$course->img}}" class="img img-responsive">
+						<div class="yazi">
+							
+							<p class="name">{{$course->name}}</p>
+							<img src="../{{$author->avatar}}" alt="">
+							<p class="author">
+								{{$author->name.' '.$author->surname}}
+							</p>
+							
+						</div>
+						<div class="price">
+							<p class="value">
+								{{$course->price}} AZN								
+							</p>
+							
+							<div class="user pull-right">
+								<i class="fa fa-user"></i>
+								<span>4</span>
+								<i class="fa fa-comments-o"></i>
+								<span>2</span>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+
+				@endforeach
+
+			</div>
+
 		</div>
 	</div>
 </section>

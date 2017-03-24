@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\User;
 use App\Blog;
 use App\Tag;
+use App\Courses;
+use App\User_course;
 class Profile_Controller extends Controller
 {
     public function myprofile()
@@ -18,7 +20,11 @@ class Profile_Controller extends Controller
 
         $tags=Tag::all();
 
-    	return view('myprofile',compact('userData','blogs','tags'));
+        $watchedCourses=User_course::where('user_id',$_SESSION['userTrue'])->get();
+
+        $courses=Courses::all();
+
+    	return view('myprofile',compact('userData','blogs','tags','courses','watchedCourses'));
     }
 
 
