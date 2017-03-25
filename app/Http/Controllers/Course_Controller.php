@@ -88,4 +88,25 @@ class Course_Controller extends Controller
         }
     }
 
+
+    public function start($id)
+    {
+
+       $course=User_course::where([['course_id',$id],['user_id',$_SESSION['userTrue']]])->first();
+
+       if(is_null($course)){
+
+            $new=new User_course;
+
+            $new->course_id=$id;
+            $new->user_id=$_SESSION['userTrue'];
+            $new->save();
+
+            return back();
+
+       }else{
+            return back();
+       }
+    }
+
 }

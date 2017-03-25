@@ -90,7 +90,11 @@ if(isset($_SESSION['userTrue'])){
 
     // Kurslar sehifesi
     Route::get('/courses','Course_Controller@index');
-    Route::get('/course/{id}','Course_Controller@course');    
+    Route::get('/course/{id}','Course_Controller@course');
+
+    // Kursa basla
+    Route::get('/start/{id}','Course_Controller@start');
+
 
 }
 

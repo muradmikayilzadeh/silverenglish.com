@@ -5,11 +5,11 @@
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">
 	
 	<div class="container">
-		<a href="index.html">Ana Səhifə</a>
+		<a href="{{url('/')}}">Ana Səhifə</a>
 		<span>></span>
-		<a href="courses.html">Kurslar</a>
+		<a href="{{url('/courses')}}">Kurslar</a>
 		<span>></span>
-		<a href="">Kurs adi</a>
+		<a href="{{url('/course',$course->id)}}">{{$course->name}}</a>
 	</div>
 </section>
 <section id="courseContent" class="col-md-12 col-xs-12 col-sm-12">
@@ -72,7 +72,7 @@
 					
 					<div class="take">
 						<p>{{$course->price}} AZN</p>
-						<button>KURSA BAŞLA</button>
+						<button onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
 					</div>
 					<div class="share">
 						<i class="fa fa-facebook"></i>
