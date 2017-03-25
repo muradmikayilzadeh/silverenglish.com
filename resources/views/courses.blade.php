@@ -19,19 +19,27 @@
 	
 	<div class="container">
 		
+		@php
+		use App\User;
+		@endphp
+
+		@foreach($courses as $course)
 		<div class="course col-md-3 col-sm-6 col-xs-12">
-			
 			<div class="body">
-				<img src="assets/images/courses/1.jpg" class="img img-responsive">
+				<img src="../{{$course->img}}" class="img img-responsive">
 				<div class="yazi">
 					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
+					@php
+						$user=User::find($course->instructor);
+					@endphp
+
+					<p class="name">{{$course->name}}</p>
+					<img src="../{{$user->avatar}}" alt="">
+					<p class="author">{{$user->name.' '.$user->surname}}</p>
 					
 				</div>
 				<div class="price">
-					<p class="value">Free</p>
+					<p class="value" onclick="location.href='{{url('/course',$course->id)}}'">{{$course->price}} AZN</p>
 					
 					<div class="user pull-right">
 						<i class="fa fa-user"></i>
@@ -40,177 +48,11 @@
 						<span>2</span>
 					</div>
 				</div>
-				
-			</div>
-		</div>
-		<div class="course col-md-3 col-sm-6 col-xs-12">
 			
-			<div class="body">
-				<img src="assets/images/courses/2.jpg" class="img img-responsive">
-				<div class="yazi">
-					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
-					
-				</div>
-				<div class="price">
-					<p class="value">Free</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
-					</div>
-				</div>
-				
 			</div>
 		</div>
-		<div class="course col-md-3 col-sm-6 col-xs-12">
-			
-			<div class="body">
-				<img src="assets/images/courses/3.jpg" class="img img-responsive">
-				<div class="yazi">
-					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
-					
-				</div>
-				<div class="price">
-					<p class="value">Free</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<div class="course col-md-3 col-sm-6 col-xs-12">
-			
-			<div class="body">
-				<img src="assets/images/courses/4.jpg" class="img img-responsive">
-				<div class="yazi">
-					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
-					
-				</div>
-				<div class="price">
-					<p class="value">Free</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<div class="course col-md-3 col-sm-6 col-xs-12">
-			
-			<div class="body">
-				<img src="assets/images/courses/5.jpg" class="img img-responsive">
-				<div class="yazi">
-					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
-					
-				</div>
-				<div class="price">
-					<p class="value">Free</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<div class="course col-md-3 col-sm-6 col-xs-12">
-			
-			<div class="body">
-				<img src="assets/images/courses/6.jpg" class="img img-responsive">
-				<div class="yazi">
-					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
-					
-				</div>
-				<div class="price">
-					<p class="value">Free</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<div class="course col-md-3 col-sm-6 col-xs-12">
-			
-			<div class="body">
-				<img src="assets/images/courses/2.jpg" class="img img-responsive">
-				<div class="yazi">
-					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
-					
-				</div>
-				<div class="price">
-					<p class="value">Free</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<div class="course col-md-3 col-sm-6 col-xs-12">
-			
-			<div class="body">
-				<img src="assets/images/courses/5.jpg" class="img img-responsive">
-				<div class="yazi">
-					
-					<p class="name">Become a PHP Master and Make Money Fast</p>
-					<img src="assets/images/avatars/1.png" alt="">
-					<p class="author">Murad Mikayilzada</p>
-					
-				</div>
-				<div class="price">
-					<p class="value">Free</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
-					</div>
-				</div>
-				
-			</div>
-		</div>
+		@endforeach
+
 	</div>
 </section>
 <script src="{{url('assets/js/fmCourses.js')}}"></script>

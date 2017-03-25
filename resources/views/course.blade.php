@@ -16,15 +16,15 @@
 	
 	<div class="container">
 		
-		<h2 class="heading">Become a PHP Master and Make Money Fast</h2>
+		<h2 class="heading">{{$course->name}}</h2>
 		<div class="line"></div>
 		
 		<div class="userLine col-md-4 col-md-offset-4">
 			
 			<div class="col-md-4">
 				<i class="fa fa-user"></i>
-				<span>4</span>
-				<p>STUDENTS</p>
+				<span>{{count($students)}}</span>
+				<p>ŞAGİRD</p>
 			</div>
 			<div class="col-md-4">
 				<i class="fa fa-star"></i>
@@ -34,13 +34,13 @@
 			<div class="col-md-4">
 				<i class="fa fa-clock-o"></i>
 				<span>4.0</span>
-				<p>LEARNING HOURS</p>
+				<p>SAAT</p>
 			</div>
 		</div>
 		
 		<div class="about col-md-8">
 			
-			<img src="assets/images/courses/1.jpg" alt="">
+			<img src="../{{$course->img}}" class="img img-responsive">
 			<div class="courseLine">
 				<ul>
 					<li>
@@ -59,14 +59,10 @@
 			</div>
 			<div class="textSection">
 				
-				<h2>ABOUT THIS COURSE</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean loem massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donectui li quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus utjusto. Nullam dictum.</p>
+				<h2>KURS HAQQINDA</h2>
+				<p>{{$course->description}}</p>
 			</div>
-			<div class="textSection">
-				
-				<h2>COURSE’S OBJECTIVES</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean loem massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donectui li quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus utjusto. Nullam dictum.Sed ut perspiciatis unde omnis iste natus error sit voluptatemNemo enim ipsam voluptatem quia voluptas sit.Neque porro quisquam est, qui dolorem ipsum dolor.At vero eos et accusamus et iusto odio dignissimos.Et harum quidem rerum facilis est et expedita distinctio.Lorem ipsum dolor sit amet, consectetuer .Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean loem massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donectui li quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus utjusto. Nullam dictum.</p>
-			</div>
+
 		</div>
 		<div class="col-md-4">
 			
@@ -75,8 +71,8 @@
 				<div class="sidebar col-md-12 col-xs-12 col-sm-12">
 					
 					<div class="take">
-						<p>Free</p>
-						<button>TAKE THIS COURSE</button>
+						<p>{{$course->price}} AZN</p>
+						<button>KURSA BAŞLA</button>
 					</div>
 					<div class="share">
 						<i class="fa fa-facebook"></i>
@@ -84,9 +80,9 @@
 						<i class="fa fa-instagram"></i>
 					</div>
 					<div class="author">
-						<img src="assets/images/avatars/1.png" alt="">
-						<p class="name">Henry H. Garrick</p>
-						<span>COURSE INSTRUCTOR</span>
+						<img src="../{{$ins->avatar}}" alt="">
+						<p class="name">{{$ins->name.' '.$ins->surname}}</p>
+						<span>TƏLİMATÇI</span>
 					</div>
 					<div class="features">
 						<h4 class="header">XÜSUSİYYƏTLƏR</h4>
@@ -94,23 +90,23 @@
 						<ul>
 							<li>
 								<i class="fa fa-file-text"></i>
-								Lectures
+								Leksiya
 							</li>
 							<li>
 								<i class="fa fa-clock-o"></i>
-								Duration
+								Zaman
 							</li>
 							<li>
 								<i class="fa fa-level-up"></i>
-								Skill Level
+								Səviyyə
 							</li>
 							<li>
 								<i class="fa fa-globe"></i>
-								Language
+								Dil
 							</li>
 							<li>
 								<i class="fa fa-shield"></i>
-								Certificate
+								Sertifikat
 							</li>
 						</ul>
 						<ul>
@@ -121,31 +117,32 @@
 								4.0
 							</li>
 							<li>
-								Beginner
+								{{$course->skill}}
 							</li>
 							<li>
-								English
+								{{$course->language}}
 							</li>
 							<li>
-								No
+								@if($course->certificate!='0')
+									Var
+
+									@else
+									Yox
+								@endif
 							</li>
 						</ul>
 					</div>
 					<div class="tags">
 						
-						<h4 class="header">ETIKETLƏR</h4>
+						<h4 class="header">MÖVZULAR</h4>
 						<div class="line"></div>
-						<a href="" class="tag">BRAINSTORM</a>
-						<a href="" class="tag">DORO</a>
-						<a href="" class="tag">EDUCATION</a>
-						<a href="" class="tag">IOS</a>
-						<a href="" class="tag">IPSUM</a>
-						<a href="" class="tag">LOCAL</a>
-						<a href="" class="tag">LOREM</a>
-						<a href="" class="tag">SDK</a>
-						<a href="" class="tag">WORDPRESS</a>
-						<a href="" class="tag">WORKING</a>
-						<a href="" class="tag">XCODE</a>
+						
+						@foreach($tags as $tag)
+
+						<p class="tag">{{$tag->name}}</p>
+
+						@endforeach
+
 					</div>
 				</div>
 			</div>

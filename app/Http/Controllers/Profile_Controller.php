@@ -24,7 +24,10 @@ class Profile_Controller extends Controller
 
         $courses=Courses::all();
 
-    	return view('myprofile',compact('userData','blogs','tags','courses','watchedCourses'));
+
+        $preparedCourses=Courses::where('instructor',$_SESSION['userTrue'])->get();
+
+    	return view('myprofile',compact('userData','blogs','tags','courses','watchedCourses','preparedCourses'));
     }
 
 

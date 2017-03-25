@@ -17,22 +17,6 @@ session_start();
 Route::get('/','IndexPage_Controller@index');
 
 
-Route::get('/courses', function () {
-    if(isset($_SESSION['userTrue'])){
-    	return view('courses');
-    }else{
-    	return redirect('/login');
-    }
-});
-
-Route::get('/course', function () {
-    if(isset($_SESSION['userTrue'])){
-    	return view('course');
-    }else{
-    	return redirect('/login');
-    }
-});
-
 
 
 Route::get('/login', function () {
@@ -98,6 +82,15 @@ if(isset($_SESSION['userTrue'])){
     // Search sistemi
     Route::get('/search/','Blog_Controller@search');
 
+
+
+    // Myprofilede kurs tenzimlemeleri
+    // Kurs yaratmaq 
+    Route::post('/savecourse','Course_Controller@newCourse');
+
+    // Kurslar sehifesi
+    Route::get('/courses','Course_Controller@index');
+    Route::get('/course/{id}','Course_Controller@course');    
 
 }
 

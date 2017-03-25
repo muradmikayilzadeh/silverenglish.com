@@ -154,7 +154,7 @@
 
 			<div id="blogs" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
 				<br>
-				<h2><div class="container">Bütün məqalələriniz</div></h2>
+				<h2>Bütün məqalələriniz</h2>
 				<br>
 				@php
 				function zaman($vaxt){
@@ -193,20 +193,171 @@
 			<div id="createCourse" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
 				
 				<br>
-				<h2><div class="container">Kurs Hazırlayın</div></h2>
+				<h2>Kurs Hazırlayın</h2>
+
+				@if ($message = Session::get('course'))
+					<b style="color:red">{{ $message }}</b>
+				@endif
+
 				<br>
 
+				<form action="{{url('/savecourse')}}" method="post" enctype="multipart/form-data">
+					
+					{{csrf_field()}}
+					<div class="input-group">
+						
+						<div class="input-group-addon">
+							Kurs adı
+						</div>
+
+						<input type="text" class="form-control" name="name">
+
+					</div>
+					
+					<br>
+
+					<div class="input-group">
+						
+						<div class="input-group-addon">
+							Kursun məzmunu
+						</div>
+
+						<textarea name="description" id="" rows="10" class="form-control"></textarea>
+
+					</div>
+
+					<br>
+
+					<div class="input-group">
+						
+						<div class="input-group-addon">
+							Kursun səviyyəsi
+						</div>
+						
+						<select name="skill" id="" class="form-control">
+							
+							<option value="Başlanğıc">Başlanğıc</option>
+							<option value="Orta">Orta</option>
+							<option value="Üst səviyyə">Üst səviyyə</option>
+							<option value="Ən üst səviyyə">Ən üst səviyyə</option>
+
+						</select>						
+
+					</div>
+					
+					<br>
+
+					<div class="input-group">
+						
+						<div class="input-group-addon">
+							Kurs dili
+						</div>
+						
+						<input type="text" class="form-control" name="language">				
+
+					</div>
+
+					<br>
+
+					<div class="input-group">
+						
+						<div class="input-group-addon">
+							Kurs qiyməti
+						</div>
+						
+						<input type="text" class="form-control" name="price">		
+
+						<div class="input-group-addon">
+							AZN
+						</div>		
+
+					</div>
+
+					<br>
+
+					<div class="text-center">
+						
+						<h4>Sertifikat Varmı?</h4>
+						
+						<select name="certificate" id="" class="form-control">
+							
+							<option value="1">Hə</option>
+							<option value="0">Yox</option>
+
+						</select>
+
+					</div>
+
+					<br><br>
+					
+					<div class="text-center">
+						
+						<h4>Kursunuza qapaq fotosu seçin</h4>
+
+						<label for="foto"><i class="fa fa-photo"></i></label>
+						<input type="file" id="foto" class="hidden" name="img">
+
+					</div>
+					
+					<br>
+					<input type="submit" value="Tamamla" class="btn btn-default">
+		
+
+				</form>
+
+			</div>
+				
+			<div id="preaperedCourses" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
+				
+				<br>
+				<h2><b>Hazırladığınız kurslar</b></h2>
+
+				@php
+					use App\Courses;
+					use App\User;
+				@endphp
+
+				@foreach($preparedCourses as $pc)
+
+				<div class="course col-md-3 col-sm-6 col-xs-12">
+
+					<div class="body">
+						<img src="../{{$pc->img}}" class="img img-responsive">
+						<div class="yazi">
+
+							<p class="name">{{$pc->name}}</p>
+							<img src="../{{$userData->avatar}}" alt="">
+							<p class="author">
+								{{$userData->name.' '.$userData->surname}}
+							</p>
+							
+						</div>
+						<div class="price">
+							<p class="value">
+								{{$pc->price}} AZN								
+							</p>
+							
+							<div class="user pull-right">
+								<i class="fa fa-user"></i>
+								<span>4</span>
+								<i class="fa fa-comments-o"></i>
+								<span>2</span>
+							</div>
+						</div>
+						
+					</div>
+
+				</div>
+
+				@endforeach
+				
 			</div>
 
 			<div id="courses" class="panel panel-default col-md-12 col-sm-12 col-xs-12">
 				
 				<br>
-				<h2><div class="container">İzlədiyiniz Kurslar</div></h2>
+				<h2>İzlədiyiniz Kurslar</h2>
 				
-				@php
-					use App\Courses;
-					use App\User;
-				@endphp
 				@foreach($watchedCourses as $wc)
 
 				<div class="course col-md-3 col-sm-6 col-xs-12">
