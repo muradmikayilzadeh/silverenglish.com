@@ -213,6 +213,8 @@
 					
 					<a href="https://www.facebook.com/murad.mikayilzada" class="fa fa-facebook" target="_blank"></a>
 					<a href="https://github.com/muradmikayilzadeh" class="fa fa-github" target="_blank"></a>
+					<a href="https://www.youtube.com/channel/UCNYhL9s_Uo7JTMue-oXQlYw" class="fa fa-youtube" target="_blank"></a>
+
 				</div>
 			</div>
 		</div>

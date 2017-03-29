@@ -337,12 +337,10 @@
 								{{$pc->price}} AZN								
 							</p>
 							
-							<div class="user pull-right">
-								<i class="fa fa-user"></i>
-								<span>4</span>
-								<i class="fa fa-comments-o"></i>
-								<span>2</span>
-							</div>
+							<a href="{{url('/courseset',$pc->id)}}" class="btn btn-default">
+								<i class="fa fa-cog"></i>
+							</a>
+
 						</div>
 						
 					</div>

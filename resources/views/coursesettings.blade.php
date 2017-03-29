@@ -1,5 +1,5 @@
 @extends('layouts.index')
-<link rel="stylesheet" href="{{url('assets/css/course.css')}}">
+	<link rel="stylesheet" href="{{url('assets/css/courseset.css')}}">
 @section('content')
 
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">
@@ -17,6 +17,37 @@
 	<div class="container">
 		
 		<h2 class="heading">{{$course->name}}</h2>
+		
+		<form action="{{url('/course/name/update',$course->id)}}" method="post" class="header text-center">
+			
+			{{csrf_field()}}
+			<br class="hidden"><br class="hidden"><br class="hidden">
+			<div class="input-group">
+				
+				<input type="text" class="form-control hidden" value="{{$course->name}}" name="name">
+
+				<div class="input-group-btn ">
+
+					<input type="submit" class="hidden btn btn-default" value="Yenilə">
+					
+				</div>
+
+			</div>
+
+		</form>
+
+		<script>
+					
+			$('.heading').click(function(event) {
+
+				$(this).hide()
+
+				$('.header input, .header br').removeClass('hidden')
+
+			});
+
+		</script>
+
 		<div class="line"></div>
 		
 		<div class="userLine col-md-4 col-md-offset-4">
@@ -54,8 +85,33 @@
 			<div class="textSection">
 				
 				<h2>KURS HAQQINDA</h2>
-				<p>{{$course->description}}</p>
-			
+				<p class="text">{{$course->description}}</p>
+
+
+				<form action="{{url('/course/desc/update',$course->id)}}" method="post" class="desc">
+					
+					{{csrf_field()}}
+
+					<textarea name="description" class="hidden form-control" cols="30" rows="10">{{$course->description}}</textarea>
+					
+					<br>
+
+					<input type="submit" class="hidden btn btn-default" value="Yenilə">
+
+				</form>
+
+				<script>
+					
+					$('.text').click(function(event) {
+
+						$(this).hide()
+
+						$('.desc input, .desc textarea').removeClass('hidden')
+
+					});
+
+				</script>
+				
 			</div>
 
 		</div>
@@ -66,8 +122,31 @@
 				<div class="sidebar col-md-12 col-xs-12 col-sm-12">
 					
 					<div class="take">
-						<p>{{$course->price}} AZN</p>
-						<button onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
+						
+						<form action="{{url('/course/price/update',$course->id)}}" class="price" method="post">
+							
+							{{csrf_field()}}
+							<input type="text" class="form-control hidden" name="price">
+
+						</form>
+
+						<p class="priceText">{{$course->price}} AZN</p>
+						<button class="start" onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
+						
+						
+
+						<script>
+							
+							$('.priceText').click(function(event) {
+
+								$(this).hide()
+								$('.start').hide()
+								$('.price input').removeClass('hidden')
+
+							});
+
+						</script>
+
 					</div>
 					<div class="share">
 						<i class="fa fa-facebook"></i>
@@ -145,6 +224,4 @@
 	</div>
 </section>
 
-<script src="{{url('assets/js/fmPost.js')}}"></script>
-<script src="{{url('assets/js/mobileMenu.js')}}"></script>
 @stop

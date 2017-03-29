@@ -109,4 +109,62 @@ class Course_Controller extends Controller
        }
     }
 
+    // Course Settings islemleri
+    public function courseSet($id)
+    {
+        $course=Courses::find($id);
+
+        $students=User_course::where('course_id',$id)->get();
+
+        $ins=User::find($course->instructor);
+
+        $tags=Tag::all();
+
+        if($course->active!='1'){
+            return view('coursesettings',compact('course','students','ins','tags'));
+        }else{
+            return back();
+        }
+    }
+
+
+    // Update description
+
+    public function courseUpdateDesc(Request $request,$id)
+    {
+        $course=Courses::find($id);
+
+        $course->description=$request->description;
+
+        $course->save();
+
+        return back();
+    }
+
+    // Update name
+
+    public function courseUpdateName(Request $request,$id)
+    {
+        $course=Courses::find($id);
+
+        $course->name=$request->name;
+
+        $course->save();
+
+        return back();
+    }
+
+     // Update Price
+
+    public function courseUpdatePrice(Request $request,$id)
+    {
+        $course=Courses::find($id);
+
+        $course->price=$request->price;
+
+        $course->save();
+
+        return back();
+    }
+
 }

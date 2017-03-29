@@ -95,6 +95,19 @@ if(isset($_SESSION['userTrue'])){
     // Kursa basla
     Route::get('/start/{id}','Course_Controller@start');
 
+    //Kurs tenzimlemeleri
+    Route::get('/courseset/{id}','Course_Controller@courseSet');
+
+
+        // Istifadeci terefinden yaradilmis kursun descriptionunu deyismek
+        Route::post('/course/desc/update/{id}','Course_Controller@courseUpdateDesc');
+
+        // Istifadeci terefinden yaradilmis kursun adini deyismek
+        Route::post('/course/name/update/{id}','Course_Controller@courseUpdateName');
+
+        // Istifadeci terefinden yaradilmis kursun qiymetini deyismek
+        Route::post('/course/price/update/{id}','Course_Controller@courseUpdatePrice');
+
 
 }
 
