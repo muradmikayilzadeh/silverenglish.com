@@ -71,7 +71,27 @@
 		
 		<div class="about col-md-8">
 			
-			<img src="../{{$course->img}}" class="img img-responsive">
+			<label for="pic">
+				<img src="../{{$course->img}}" class="img img-responsive">
+			</label>
+			
+			<form action="{{url('/course/pic/update',$course->id)}}" class="picture" method="post" enctype="multipart/form-data">
+				
+				{{csrf_field()}}
+				<input type="file" class="hidden" id="pic" name="img">
+
+			</form>
+
+			<script>
+		
+				$('.picture #pic').change(function(event) {
+					
+					$('.picture').submit()
+
+				});
+
+			</script>
+
 			<div class="courseLine">
 				<ul>
 					<li>
@@ -213,7 +233,8 @@
 						
 						@foreach($tags as $tag)
 
-						<p class="tag">{{$tag->name}}</p>
+						<p
+						 class="tag">{{$tag->name}}</p>
 
 						@endforeach
 

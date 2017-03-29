@@ -108,6 +108,9 @@ if(isset($_SESSION['userTrue'])){
         // Istifadeci terefinden yaradilmis kursun qiymetini deyismek
         Route::post('/course/price/update/{id}','Course_Controller@courseUpdatePrice');
 
+        // Istifadeci terefinden yaradilmis kursun seklini deyismek
+        Route::post('/course/pic/update/{id}','Course_Controller@courseUpdatePic');
+
 
 }
 

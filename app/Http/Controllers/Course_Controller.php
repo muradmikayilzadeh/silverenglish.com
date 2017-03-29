@@ -167,4 +167,31 @@ class Course_Controller extends Controller
         return back();
     }
 
+    // Update Picture
+
+    public function courseUpdatePic(Request $request,$id)
+    {
+        $course=Courses::find($id);
+
+        if($request->hasFile('img')){
+
+            $ext=$request->file('img')->getClientOriginalExtension();
+
+            if($ext=='jpg' || $ext=='png' || $ext=='jpeg' || $ext=='bmp')  {
+
+                $file=$request->file('img');
+                $filename=time().'.'.$file->getClientOriginalExtension();
+                $file->move('assets/images/courses/',$filename);
+                $path='assets/images/courses/'.$filename;
+                $course->img=$path;
+
+            }
+           
+        }
+
+        $course->save();
+
+        return back();
+    }
+
 }
