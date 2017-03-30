@@ -183,7 +183,7 @@
 						<form action="{{url('/course/price/update',$course->id)}}" class="price" method="post">
 							
 							{{csrf_field()}}
-							<input type="text" class="form-control hidden" name="price">
+							<input type="number" class="form-control hidden" name="price">
 
 						</form>
 

@@ -265,7 +265,7 @@
 							Kurs qiyməti
 						</div>
 						
-						<input type="text" class="form-control" name="price">		
+						<input type="number" class="form-control" name="price">		
 
 						<div class="input-group-addon">
 							AZN
