@@ -147,6 +147,7 @@
 				<br><br>
 				<form action="{{url('/course/addvideo',$course->id)}}" class="addVideo" method="post" enctype="multipart/form-data">
 					
+					{{csrf_field()}}
 					<label for="film" style="font-size: 25px">
 						<i class="fa fa-film"></i>
 						Video əlavə edin
