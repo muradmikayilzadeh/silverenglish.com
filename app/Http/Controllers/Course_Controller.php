@@ -68,7 +68,7 @@ class Course_Controller extends Controller
 
         $new->save();
 
-        mkdir('assets/videos/'.$new->id);
+        mkdir('assets/videos/'.$new->id,0777,true);
 
         return back()->with('course','Kursunuz qeydə alındı! Müəyyən yoxlamadan sonra kursunuz əlavə ediləcək!');
 
