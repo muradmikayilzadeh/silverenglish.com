@@ -217,11 +217,15 @@ class Course_Controller extends Controller
                 $filename=time().'.'.$file->getClientOriginalExtension();
                 $file->move('assets/videos/'.$id,$filename);
                 $path='assets/videos/'.$id.'/'.$filename;
-                $course->img=$path;
+                $new->src=$path;
 
             }
            
         }
+
+        $new->save();
+
+        return back();
 
     }
 
