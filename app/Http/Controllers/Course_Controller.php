@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Courses;
 use App\User_course;
+use App\Course_video;
 use App\User;
 use App\Tag;
 
@@ -66,6 +67,8 @@ class Course_Controller extends Controller
         $new->active='0';
 
         $new->save();
+
+        mkdir('assets/videos/'.$new->id);
 
         return back()->with('course','Kursunuz qeydə alındı! Müəyyən yoxlamadan sonra kursunuz əlavə ediləcək!');
 
@@ -192,6 +195,34 @@ class Course_Controller extends Controller
         $course->save();
 
         return back();
+    }
+
+
+    // Upload Video
+
+    public function courseAddVideo(Request $request, $id)
+    {
+        
+        $new=new Course_video;
+
+        $new->course_id=$id;
+
+        if($request->hasFile('video')){
+
+            $ext=$request->file('video')->getClientOriginalExtension();
+
+            if($ext=='mp4')  {
+
+                $file=$request->file('video');
+                $filename=time().'.'.$file->getClientOriginalExtension();
+                $file->move('assets/videos/'.$id,$filename);
+                $path='assets/videos/'.$id.'/'.$filename;
+                $course->img=$path;
+
+            }
+           
+        }
+
     }
 
 }

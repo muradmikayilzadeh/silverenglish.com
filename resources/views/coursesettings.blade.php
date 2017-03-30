@@ -94,15 +94,23 @@
 
 			<div class="courseLine">
 				<ul>
+
 					<li>
-						<a href="">About</a>
+
+						<a id="about" style="cursor: pointer">Haqqında</a>
+
 					</li>
+
 					<li>
-						<a href="">Curriculum</a>
+
+						<a id="curriculum" style="cursor: pointer">Kurikulum</a>
+
 					</li>
+
 				</ul>
 			</div>
-			<div class="textSection">
+
+			<div id="textSection" class="textSection">
 				
 				<h2>KURS HAQQINDA</h2>
 				<p class="text">{{$course->description}}</p>
@@ -133,6 +141,34 @@
 				</script>
 				
 			</div>
+
+			<div id="videos">
+				
+				<br><br>
+				<form action="{{url('/course/addvideo',$course->id)}}" class="addVideo" method="post" enctype="multipart/form-data">
+					
+					<label for="film" style="font-size: 25px">
+						<i class="fa fa-film"></i>
+						Video əlavə edin
+					</label>
+
+					<input type="file" name="video" id="film" class="hidden">
+
+				</form>
+
+				<script>
+					
+					$('.addVideo input').change(function(event) {
+						
+						$('.addVideo').submit()
+
+					});
+
+				</script>
+
+			</div>
+
+			<script src="{{url('assets/js/about.js')}}"></script>
 
 		</div>
 		<div class="col-md-4">

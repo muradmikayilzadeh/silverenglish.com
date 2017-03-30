@@ -111,6 +111,10 @@ if(isset($_SESSION['userTrue'])){
         // Istifadeci terefinden yaradilmis kursun seklini deyismek
         Route::post('/course/pic/update/{id}','Course_Controller@courseUpdatePic');
 
+        // Istifadeci terefinden yaradilmis kursa video elave etmek
+
+        Route::post('/course/addvideo/{id}','Course_Controller@courseAddVideo');
+
 
 }
 
