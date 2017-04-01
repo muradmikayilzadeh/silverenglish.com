@@ -118,22 +118,30 @@ class Course_Controller extends Controller
     // Course Settings islemleri
     public function courseSet($id)
     {
+
         $course=Courses::find($id);
 
-        $students=User_course::where('course_id',$id)->get();
+        if($course->instructor==$_SESSION['userTrue']){
 
-        $ins=User::find($course->instructor);
+            $students=User_course::where('course_id',$id)->get();
 
-        $tags=Tag::all();
+            $ins=User::find($course->instructor);
+
+            $tags=Tag::all();
 
 
-        $videos=Course_video::where('course_id',$id)->get();
+            $videos=Course_video::where('course_id',$id)->get();
 
-        if($course->active!='1'){
-            return view('coursesettings',compact('course','students','ins','tags','videos'));
+            if($course->active!='1'){
+                return view('coursesettings',compact('course','students','ins','tags','videos'));
+            }else{
+                 return back();
+            }
+
         }else{
-            return back();
+            return '<img src="../assets/images/extra/nah.gif">';
         }
+
     }
 
 
