@@ -84,8 +84,11 @@ class Course_Controller extends Controller
 
         $tags=Tag::all();
 
+        $videos=Course_video::where('course_id',$id)->get();
+
+
         if($course->active!='1'){
-            return view('course',compact('course','students','ins','tags'));
+            return view('course',compact('course','students','ins','tags','videos'));
         }else{
             return back();
         }

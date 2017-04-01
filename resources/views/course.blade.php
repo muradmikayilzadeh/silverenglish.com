@@ -1,5 +1,5 @@
 @extends('layouts.index')
-<link rel="stylesheet" href="{{url('assets/css/course.css')}}">
+	<link rel="stylesheet" href="{{url('assets/css/courseset.css')}}">
 @section('content')
 
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">
@@ -17,6 +17,7 @@
 	<div class="container">
 		
 		<h2 class="heading">{{$course->name}}</h2>
+
 		<div class="line"></div>
 		
 		<div class="userLine col-md-4 col-md-offset-4">
@@ -40,23 +41,78 @@
 		
 		<div class="about col-md-8">
 			
-			<img src="../{{$course->img}}" class="img img-responsive">
+			<label for="pic">
+				<img src="../{{$course->img}}" class="img img-responsive">
+			</label>
+
 			<div class="courseLine">
 				<ul>
+
 					<li>
-						<a href="">About</a>
+
+						<a id="about" style="cursor: pointer">Haqqında</a>
+
 					</li>
+
 					<li>
-						<a href="">Curriculum</a>
+
+						<a id="curriculum" style="cursor: pointer">Kurikulum</a>
+
 					</li>
+
 				</ul>
 			</div>
-			<div class="textSection">
+
+			<div id="textSection" class="textSection">
 				
 				<h2>KURS HAQQINDA</h2>
-				<p>{{$course->description}}</p>
-			
+				<p class="text">{{$course->description}}</p>
+
 			</div>
+			
+
+			<div id="videos">
+				
+				<br><br>
+				
+				<div id="videoList">
+					
+						
+						<h2><b>Leksiyalar</b></h2>
+
+						<ul class="list-group">
+							
+							@foreach($videos as $video)
+									
+							<li class="list-group-item col-md-12 col-sm-12 col-xs-12">
+
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									
+									<div class="row">
+										
+										<video src="../{{$video->src}}" class="embed-responsive embed-responsive-item"></video>
+
+									</div>
+
+								</div>
+								
+								<div class="col-md-9 col-sm-9 col-xs-9">
+									
+									<h3><b>{{$video->name}}</b></h3>
+
+								</div>
+
+							</li>
+
+							@endforeach
+
+						</ul>
+
+				</div>
+
+			</div>
+
+			<script src="{{url('assets/js/about.js')}}"></script>
 
 		</div>
 		<div class="col-md-4">
@@ -66,8 +122,10 @@
 				<div class="sidebar col-md-12 col-xs-12 col-sm-12">
 					
 					<div class="take">
-						<p>{{$course->price}} AZN</p>
-						<button onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
+
+						<p class="priceText">{{$course->price}} AZN</p>
+						<button disabled class="start" onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
+
 					</div>
 					<div class="share">
 						<i class="fa fa-facebook"></i>
@@ -106,7 +164,7 @@
 						</ul>
 						<ul>
 							<li>
-								7
+								{{count($videos)}}
 							</li>
 							<li>
 								4.0
@@ -134,7 +192,8 @@
 						
 						@foreach($tags as $tag)
 
-						<p class="tag">{{$tag->name}}</p>
+						<p
+						 class="tag">{{$tag->name}}</p>
 
 						@endforeach
 
@@ -145,6 +204,4 @@
 	</div>
 </section>
 
-<script src="{{url('assets/js/fmPost.js')}}"></script>
-<script src="{{url('assets/js/mobileMenu.js')}}"></script>
 @stop
