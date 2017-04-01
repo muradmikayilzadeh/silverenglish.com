@@ -148,7 +148,6 @@
 				<br><br>
 				<form action="{{url('/course/addvideo',$course->id)}}" class="addVideo" method="post" enctype="multipart/form-data">
 					
-					<div class="row">
 						
 						{{csrf_field()}}
 						<input type="text" class="form-control" name="name">
@@ -161,8 +160,6 @@
 						</label>
 
 						<input type="file" name="video" id="video" class="hidden">
-
-					</div>
 
 				</form>
 
@@ -181,7 +178,6 @@
 
 				<div id="videoList">
 					
-					<div class="row">
 						
 						<h2><b>Leksiyalar</b></h2>
 
@@ -203,12 +199,10 @@
 								
 								<div class="col-md-9 col-sm-9 col-xs-9">
 									
-									<div class="row">
 										
 										<h3><b>{{$video->name}}</b></h3>
 										<a href="{{url('/deletevideo',$video->id)}}" class="fa fa-close pull-right"></a>
 
-									</div>
 
 								</div>
 
@@ -217,8 +211,6 @@
 							@endforeach
 
 						</ul>
-
-					</div>
 
 				</div>
 

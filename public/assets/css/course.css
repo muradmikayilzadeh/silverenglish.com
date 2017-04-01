@@ -157,7 +157,7 @@
     font-size: 15px; }
 #courseContent .about .textSection:last-child p {
   margin-bottom: 100px; }
-#courseContent .about #videos #videoList {
+#courseContent .about #videos #videoList .list-group-item {
   margin-bottom: 40px; }
   #courseContent .about #videos #videoList .list-group-item video {
     height: 100px; }
