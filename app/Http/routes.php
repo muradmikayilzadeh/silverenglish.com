@@ -116,6 +116,10 @@ if(isset($_SESSION['userTrue'])){
         Route::post('/course/addvideo/{id}','Course_Controller@courseAddVideo');
 
 
+        //Video silmek
+        Route::get('/deletevideo/{id}','Course_Controller@courseDeleteVideo');
+
+
 }
 
 

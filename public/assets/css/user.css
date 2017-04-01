@@ -1,2 +1,37 @@
-body{overflow:hidden}video{height:800px}.bg,.bgRegister{background:#79797D;height:380px;margin-top:-690px;opacity:.4}.bgRegister{margin-top:-740px;height:535px}.login,.register{background:transparent;margin-top:-690px;text-align:center}.login img,.register img{height:150px;margin-left:-15px}.login .button,.register .button{border:none;background:#7CB342;color:white;padding:10px;margin-top:20px;width:100%}.register{margin-top:-740px}.register img{height:135px}
+body {
+  overflow: hidden; }
+
+video {
+  height: 800px; }
+
+.bg, .bgRegister {
+  background: #79797D;
+  height: 380px;
+  margin-top: -690px;
+  opacity: .4; }
+
+.bgRegister {
+  margin-top: -740px;
+  height: 535px; }
+
+.login, .register {
+  background: transparent;
+  margin-top: -690px;
+  text-align: center; }
+  .login img, .register img {
+    height: 150px;
+    margin-left: -15px; }
+  .login .button, .register .button {
+    border: none;
+    background: #7CB342;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%; }
+
+.register {
+  margin-top: -740px; }
+  .register img {
+    height: 135px; }
+
 /*# sourceMappingURL=user.css.map */

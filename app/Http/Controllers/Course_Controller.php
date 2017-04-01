@@ -123,8 +123,11 @@ class Course_Controller extends Controller
 
         $tags=Tag::all();
 
+
+        $videos=Course_video::where('course_id',$id)->get();
+
         if($course->active!='1'){
-            return view('coursesettings',compact('course','students','ins','tags'));
+            return view('coursesettings',compact('course','students','ins','tags','videos'));
         }else{
             return back();
         }
@@ -135,6 +138,11 @@ class Course_Controller extends Controller
 
     public function courseUpdateDesc(Request $request,$id)
     {
+
+        $this->validate($request,[
+           'description'=>'required',
+        ]);
+
         $course=Courses::find($id);
 
         $course->description=$request->description;
@@ -148,6 +156,11 @@ class Course_Controller extends Controller
 
     public function courseUpdateName(Request $request,$id)
     {
+
+        $this->validate($request,[
+           'name'=>'required',
+        ]);
+
         $course=Courses::find($id);
 
         $course->name=$request->name;
@@ -161,6 +174,11 @@ class Course_Controller extends Controller
 
     public function courseUpdatePrice(Request $request,$id)
     {
+
+        $this->validate($request,[
+           'price'=>'required',
+        ]);
+
         $course=Courses::find($id);
 
         $course->price=$request->price;
@@ -173,7 +191,8 @@ class Course_Controller extends Controller
     // Update Picture
 
     public function courseUpdatePic(Request $request,$id)
-    {
+    {   
+
         $course=Courses::find($id);
 
         if($request->hasFile('img')){
@@ -201,11 +220,18 @@ class Course_Controller extends Controller
     // Upload Video
 
     public function courseAddVideo(Request $request, $id)
-    {
+    {   
+
+
+        $this->validate($request,[
+           'name'=>'required',
+        ]);
         
         $new=new Course_video;
 
         $new->course_id=$id;
+
+        $new->name=$request->name;
 
         if($request->hasFile('video')){
 
@@ -227,6 +253,17 @@ class Course_Controller extends Controller
 
         return back();
 
+    }
+
+    // Delete Video
+
+    public function courseDeleteVideo($id)
+    {
+        $video=Course_video::find($id);
+
+        $video->delete();
+
+        return back();
     }
 
 }

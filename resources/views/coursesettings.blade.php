@@ -141,31 +141,86 @@
 				</script>
 				
 			</div>
+			
 
 			<div id="videos">
 				
 				<br><br>
 				<form action="{{url('/course/addvideo',$course->id)}}" class="addVideo" method="post" enctype="multipart/form-data">
 					
-					{{csrf_field()}}
-					<label for="film" style="font-size: 25px">
-						<i class="fa fa-film"></i>
-						Video əlavə edin
-					</label>
+					<div class="row">
+						
+						{{csrf_field()}}
+						<input type="text" class="form-control" name="name">
+						
+						<br>
+						<label for="video" style="font-size: 20px">
+							
+							<i class="fa fa-film"> Video seçin</i>
 
-					<input type="file" name="video" id="film" class="hidden">
+						</label>
+
+						<input type="file" name="video" id="video" class="hidden">
+
+					</div>
 
 				</form>
 
 				<script>
 					
-					$('.addVideo input').change(function(event) {
+					$('.addVideo .hidden').change(function(event) {
 						
 						$('.addVideo').submit()
 
 					});
 
 				</script>
+
+
+
+
+				<div id="videoList">
+					
+					<div class="row">
+						
+						<h2><b>Leksiyalar</b></h2>
+
+						<ul class="list-group">
+							
+							@foreach($videos as $video)
+									
+							<li class="list-group-item col-md-12 col-sm-12 col-xs-12">
+
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									
+									<div class="row">
+										
+										<video src="../{{$video->src}}" class="embed-responsive embed-responsive-item"></video>
+
+									</div>
+
+								</div>
+								
+								<div class="col-md-9 col-sm-9 col-xs-9">
+									
+									<div class="row">
+										
+										<h3><b>{{$video->name}}</b></h3>
+										<a href="{{url('/deletevideo',$video->id)}}" class="fa fa-close pull-right"></a>
+
+									</div>
+
+								</div>
+
+							</li>
+
+							@endforeach
+
+						</ul>
+
+					</div>
+
+				</div>
 
 			</div>
 
@@ -188,7 +243,7 @@
 						</form>
 
 						<p class="priceText">{{$course->price}} AZN</p>
-						<button class="start" onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
+						<button disabled class="start" onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
 						
 						
 
@@ -242,7 +297,7 @@
 						</ul>
 						<ul>
 							<li>
-								7
+								{{count($videos)}}
 							</li>
 							<li>
 								4.0
