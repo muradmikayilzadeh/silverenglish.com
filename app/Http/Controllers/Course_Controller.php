@@ -268,9 +268,9 @@ class Course_Controller extends Controller
 
     // Delete Video
 
-    public function courseDeleteVideo($id)
-    {
-        $video=Course_video::find($id);
+    public function courseDeleteVideo(Request $request)
+    {   
+        $video=Course_video::find($request->video);
 
         $video->delete();
 

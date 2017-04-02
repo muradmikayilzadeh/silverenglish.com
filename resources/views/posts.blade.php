@@ -21,12 +21,13 @@
 		
 		@php
 		function zaman($vaxt){
-		$aylar=['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avqust','Sentyabr','Oktyabr','Dekabr'];
-		$ay=explode('-',$vaxt);
-		$saat=explode(' ', $ay[2]);
-		return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
+			$aylar=['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avqust','Sentyabr','Oktyabr','Dekabr'];
+			$ay=explode('-',$vaxt);
+			$saat=explode(' ', $ay[2]);
+			return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 		}
 		@endphp
+		
 		@foreach($blogs as $blog)
 		@if($blog->active!='0')
 		<div class="col-md-4 col-sm-12 col-xs-12">

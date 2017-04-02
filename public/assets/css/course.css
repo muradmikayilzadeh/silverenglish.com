@@ -163,12 +163,16 @@
     height: 100px; }
   #courseContent .about #videos #videoList .list-group-item h3 {
     margin-top: -3px; }
-  #courseContent .about #videos #videoList .list-group-item a {
+  #courseContent .about #videos #videoList .list-group-item form {
+    display: inline-block;
     margin-top: -30px;
+    float: right;
     color: black;
     text-decoration: none; }
-    #courseContent .about #videos #videoList .list-group-item a:hover {
+    #courseContent .about #videos #videoList .list-group-item form:hover {
       color: red; }
+    #courseContent .about #videos #videoList .list-group-item form label {
+      cursor: pointer; }
 
 #courseContent .col-md-4 .sidebar {
   background: #F5F5F5;

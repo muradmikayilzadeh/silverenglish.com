@@ -77,9 +77,9 @@ class Blog_Controller extends Controller
 
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $blog=Blog::find($id);
+        $blog=Blog::find($request->blog);
 
         $blog->active='0';
 
@@ -105,10 +105,20 @@ class Blog_Controller extends Controller
     }
 
 
-    public function deleteComment($id)
+    public function deleteComment(Request $request)
     {
-        $comment=Comments::find($id);
+        $comment=Comments::find($request->id);
+
+        $replieds=Comments::where('replied_id',$request->id);
+
+        if(!is_null($replieds)){
+
+            $replieds->delete();
+
+        }
+
         $comment->delete();
+
         return back();
     }
 

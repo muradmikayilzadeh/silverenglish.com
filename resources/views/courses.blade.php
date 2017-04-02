@@ -24,33 +24,36 @@
 		@endphp
 
 		@foreach($courses as $course)
-		<div class="course col-md-3 col-sm-6 col-xs-12">
-			<div class="body">
-				<img src="../{{$course->img}}" class="img img-responsive">
-				<div class="yazi">
-					
-					@php
-						$user=User::find($course->instructor);
-					@endphp
+		@if($course->active!='0')
 
-					<p class="name">{{$course->name}}</p>
-					<img src="../{{$user->avatar}}" alt="">
-					<p class="author">{{$user->name.' '.$user->surname}}</p>
-					
-				</div>
-				<div class="price">
-					<p class="value" onclick="location.href='{{url('/course',$course->id)}}'">{{$course->price}} AZN</p>
-					
-					<div class="user pull-right">
-						<i class="fa fa-user"></i>
-						<span>4</span>
-						<i class="fa fa-comments-o"></i>
-						<span>2</span>
+			<div class="course col-md-3 col-sm-6 col-xs-12">
+				<div class="body">
+					<img src="../{{$course->img}}" class="img img-responsive">
+					<div class="yazi">
+						
+						@php
+							$user=User::find($course->instructor);
+						@endphp
+
+						<p class="name">{{$course->name}}</p>
+						<img src="../{{$user->avatar}}" alt="">
+						<p class="author">{{$user->name.' '.$user->surname}}</p>
+						
+					</div>
+					<div class="price">
+						<p class="value" onclick="location.href='{{url('/course',$course->id)}}'">{{$course->price}} AZN</p>
+						
+						<div class="user pull-right">
+							<i class="fa fa-user"></i>
+							<span>4</span>
+							<i class="fa fa-comments-o"></i>
+							<span>2</span>
+						</div>
 					</div>
 				</div>
-			
 			</div>
-		</div>
+
+		@endif
 		@endforeach
 
 	</div>

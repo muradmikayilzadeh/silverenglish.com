@@ -201,8 +201,16 @@
 									
 										
 										<h3><b>{{$video->name}}</b></h3>
-										<a href="{{url('/deletevideo',$video->id)}}" class="fa fa-close pull-right"></a>
 
+										<form action="{{url('/deletevideo',$video->id)}}" method="post">
+
+											{{csrf_field()}}
+
+											<label for="close" class="fa fa-close pull-right"></label>
+
+											<input type="submit" class="hidden" value="{{$video->id}}" id="close" name="video">
+
+										</form>
 
 								</div>
 

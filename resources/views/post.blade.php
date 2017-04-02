@@ -142,7 +142,8 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 									</div>
 
 									<div class="col-md-10">
-										<a style="cursor: pointer" class="cavabla pull-right">| Cavabla</a>
+
+										<label class="cavabla pull-right">|Cavabla</label>
 										
 										<script>
 											$('.cavabla').click(function(event) {
@@ -152,7 +153,18 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 										</script>
 										
 										@if($user->id=$_SESSION['userTrue'])
-										<a href="{{url('/deletecomment',$comment->id)}}" class="pull-right">Sil |</a>
+
+										<form action="{{url('/deletecomment')}}" method="post">
+													
+											{{csrf_field()}}
+													
+											<label for="id" class="pull-right"> Sil|</label>
+
+											<input type="submit" value="{{$comment->id}}" class="hidden" name="id" id="id">
+
+										</form>
+
+
 										@endif
 
 										<h4 class="name">{{$user->name.' '.$user->surname}}</h4>
@@ -190,8 +202,17 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 										<div class="col-md-10">
 											
 											@if($repliedUser->id==$_SESSION['userTrue'])
+												
 
-												<a class="pull-right" href="{{url('deletecomment',$replied->id)}}">Sil</a>
+												<form action="{{url('/deletecomment')}}" method="post">
+													
+													{{csrf_field()}}
+													
+													<label for="id" class="pull-right">Sil</label>
+
+													<input type="submit" value="{{$replied->id}}" class="hidden" name="id" id="id">
+
+												</form>
 
 											@endif
 

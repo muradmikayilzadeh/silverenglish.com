@@ -180,9 +180,21 @@
 								<i class="fa fa-eye"></i>
 							</a>
 							<script src='assets/js/1.js'></script>
-							<a href="{{url('blog/delete',$blog->id)}}" class="btn btn-danger">
-								<i class="fa fa-trash"></i>
-							</a>
+							
+							<form action="{{url('/blog/delete',$blog->id)}}" method="post" style="display: inline-block;">
+
+								{{csrf_field()}}
+
+								<label for="close" class="btn btn-danger">
+									
+									<i class="fa fa-trash"></i>
+
+								</label>
+
+								<input type="submit" class="hidden" value="{{$blog->id}}" id="close" name="blog">
+
+							</form>
+
 						</div>
 					</div>
 				</div>
