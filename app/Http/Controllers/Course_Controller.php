@@ -132,12 +132,8 @@ class Course_Controller extends Controller
 
             $videos=Course_video::where('course_id',$id)->get();
 
-            if($course->active!='1'){
-                return view('coursesettings',compact('course','students','ins','tags','videos'));
-            }else{
-                 return back();
-            }
-
+            return view('coursesettings',compact('course','students','ins','tags','videos'));
+            
         }else{
             return '<img src="../assets/images/extra/nah.gif">';
         }
