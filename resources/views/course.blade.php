@@ -1,7 +1,24 @@
 @extends('layouts.index')
 	<link rel="stylesheet" href="{{url('assets/css/courseset.css')}}">
 @section('content')
+	<style>
+		
+		.black{
+			width: 100%;
+			background:black;
+			opacity: .7;
+			position: absolute;
+			top:0;
+		}
 
+		#mainVideo{
+			position: fixed;
+			top:150px;
+			left: 350px;
+			z-index: 99;
+		}
+
+	</style>
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">
 	
 	<div class="container">
@@ -84,7 +101,7 @@
 							
 							@foreach($videos as $video)
 									
-							<li class="list-group-item col-md-12 col-sm-12 col-xs-12">
+							<li id="item" class="list-group-item col-md-12 col-sm-12 col-xs-12">
 
 								<div class="col-md-3 col-sm-3 col-xs-12">
 									
@@ -107,6 +124,8 @@
 							@endforeach
 
 						</ul>
+
+						<script src="{{url('assets/js/video.js')}}"></script>
 
 				</div>
 

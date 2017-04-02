@@ -15,8 +15,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	<script src="{{url('assets/vendor/js/jquery-3.1.0.js')}}"></script>
 	
-</head>	
+</head>
 <body>
+
 		<div class="container-fluid">
 			
 
@@ -189,6 +190,15 @@
 				
 
 		</div>
+
+{{-- Some extras --}}
+<video width="640px" height="360px" class="mainVideo hidden" controls autoplay>
+
+	<source src="" type="video/mp4">
+
+</video>
+
+<script src="{{url('assets/js/video.js')}}"></script>
 </body>
 
 {{-- 	<script src="assets/js/fmCourses.js"></script>

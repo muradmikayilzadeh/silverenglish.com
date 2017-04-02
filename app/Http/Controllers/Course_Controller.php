@@ -87,7 +87,7 @@ class Course_Controller extends Controller
         $videos=Course_video::where('course_id',$id)->get();
 
 
-        if($course->active!='1'){
+        if($course->active!='0'){
             return view('course',compact('course','students','ins','tags','videos'));
         }else{
             return back();

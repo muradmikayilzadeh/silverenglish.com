@@ -101,6 +101,11 @@
 					
 					margin-bottom:40px;
 
+					&:hover{
+						background:lightgray;
+						cursor: pointer;
+					}
+
 					video{
 						height: 100px;
 					}
