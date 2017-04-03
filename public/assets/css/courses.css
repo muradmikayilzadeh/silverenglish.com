@@ -154,7 +154,8 @@
         margin-top: 5px; }
 
 #footer {
-  background: #111111; }
+  background: #111111;
+  margin-top: 40px; }
   #footer .col-md-12 {
     border-top: 1px solid #212121;
     color: #4E4E4E;

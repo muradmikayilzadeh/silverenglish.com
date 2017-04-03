@@ -176,7 +176,14 @@
 											
 
 										<div class="container">
-											Copyright © 2017 silverenglish.com
+											Copyright © 
+											@php
+											$a=getdate();
+
+											echo $a['year'];
+											@endphp 
+
+											silverenglish.com
 										</div>
 
 
