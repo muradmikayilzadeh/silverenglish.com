@@ -1,24 +1,6 @@
 @extends('layouts.index')
 	<link rel="stylesheet" href="{{url('assets/css/courseset.css')}}">
 @section('content')
-	<style>
-		
-		.black{
-			width: 100%;
-			background:black;
-			opacity: .7;
-			position: absolute;
-			top:0;
-		}
-
-		#mainVideo{
-			position: fixed;
-			top:150px;
-			left: 350px;
-			z-index: 99;
-		}
-
-	</style>
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">
 	
 	<div class="container">
