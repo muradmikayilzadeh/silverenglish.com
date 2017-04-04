@@ -155,9 +155,11 @@
       margin-bottom: 20px;
       border-top: 1px solid #EEEEEE;
       border-bottom: 1px solid #EEEEEE; }
-      #content .col-md-8 .post .author .col-md-2 img {
-        height: 120px;
-        border-radius: 100%; }
+      #content .col-md-8 .post .author .col-md-2 {
+        overflow: hidden; }
+        #content .col-md-8 .post .author .col-md-2 img {
+          max-height: 120px;
+          height: 120px; }
       #content .col-md-8 .post .author .col-md-10 .name {
         font-family: 'Roboto',sans-serif;
         font-weight: 600; }

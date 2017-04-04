@@ -45,6 +45,12 @@
 						<input type="file" class="form-control" name="avatar" value="{{$userData->avatar}}">
 					</div>
 					<br>
+					<div class="input-group">
+						
+						<div class="input-group-addon">Haqqınızda</div>
+						<textarea name="desc" class="form-control">{{$userData->desc}}</textarea>
+					</div>
+					<br>
 					<input type="submit" value="Yenilə" class="btn btn-success">
 					<div class="btn btn-danger">Şifrəni yenilə</div>
 					

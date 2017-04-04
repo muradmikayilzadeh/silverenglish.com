@@ -37,12 +37,15 @@ class Profile_Controller extends Controller
     	$this->validate($request,[
                 'name'=>'required',
                 'surname'=>'required',
+                'desc'=>'required',
                 ]);
 
     	$user=User::find($_SESSION['userTrue']);
 
     	$user->name=$request->name;
     	$user->surname=$request->surname;
+
+        $user->desc=$request->desc;
 
     	if($request->hasFile('avatar')){
 
