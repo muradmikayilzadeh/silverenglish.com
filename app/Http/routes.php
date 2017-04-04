@@ -69,6 +69,7 @@ if(isset($_SESSION['userTrue'])){
 
     // Comment silmek 
     Route::post('/deletecomment','Blog_Controller@deleteComment');
+    Route::post('/deletereply','Blog_Controller@deleteReply');
 
     // Reply Comment yazmaq
     Route::post('/newreply','Blog_Controller@newReply');

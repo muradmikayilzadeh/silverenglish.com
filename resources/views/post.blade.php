@@ -159,8 +159,10 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 											{{csrf_field()}}
 													
 											<label for="id" class="pull-right"> Sil|</label>
+											
+											<input type="hidden" value="{{$comment->id}}" name="id">
 
-											<input type="submit" value="{{$comment->id}}" class="hidden" name="id" id="id">
+											<input type="submit" value="{{$comment->id}}" class="hidden" id="id">
 
 										</form>
 
@@ -187,8 +189,10 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 										</form>
 									</div>
 									@php
+
 									$replieds=Comments::where('replied_id',$comment->id)->get();
 									@endphp
+
 									@foreach($replieds as $replied)
 									
 									@php
@@ -204,15 +208,18 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 											@if($repliedUser->id==$_SESSION['userTrue'])
 												
 
-												<form action="{{url('/deletecomment')}}" method="post">
+												<form action="{{url('/deletereply')}}" method="post">
 													
 													{{csrf_field()}}
 													
-													<label for="id" class="pull-right">Sil</label>
+													<label for="sira" class="pull-right">Sil</label>
+													
+													<input type="hidden" value="{{$replied->id}}" name="id">
 
-													<input type="submit" value="{{$replied->id}}" class="hidden" name="id" id="id">
+													<input type="submit" class="hidden" id="sira">
 
 												</form>
+												
 
 											@endif
 

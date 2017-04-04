@@ -109,16 +109,27 @@ class Blog_Controller extends Controller
     {
         $comment=Comments::find($request->id);
 
-        $replieds=Comments::where('replied_id',$request->id);
+        $replieds=Comments::where('replied_id',$request->id)->get();
 
         if(!is_null($replieds)){
 
-            $replieds->delete();
+            foreach ($replieds as $replied) {
+                $replied->delete();
+            }
 
         }
 
         $comment->delete();
 
+        return back();
+        
+    }
+
+
+    public function deleteReply(Request $request)
+    {
+        $replied=Comments::find($request->id);
+        $replied->delete();
         return back();
     }
 
