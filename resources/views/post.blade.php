@@ -88,7 +88,7 @@ return $saat[0].' '.$aylar[$ay[1]-1].' '.$ay[0].' '.$saat[1];
 						
 						<div class="row">
 							<div class="col-md-2">
-								<img src="../{{$user->avatar}}" alt="">
+								<img src="../{{$user->avatar}}" class="img img-reponsive">
 							</div>
 							<div class="col-md-10">
 								<h4 class="name">{{$user->name.' '.$user->surname}}</h4>
