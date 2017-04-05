@@ -291,9 +291,10 @@ class Course_Controller extends Controller
         if(!is_null($uc)){
 
             $video=Course_video::find($id);
-            $videos=Course_video::where('course_id',$id)->get();
+            $videos=Course_video::where('course_id',$cd)->get();
+            $course=Courses::find($cd);
 
-            return view('video',compact('video','videos'));
+            return view('video',compact('video','videos','course'));
 
         }else{
 

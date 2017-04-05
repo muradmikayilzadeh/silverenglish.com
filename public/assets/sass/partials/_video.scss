@@ -9,6 +9,11 @@ video::-webkit-media-controls-enclosure {
 video::-webkit-media-controls-panel {
     width: calc(100% + 30px);
 }
+
+video{
+	background:black;
+	max-height:500px;
+}
 		
 #black{
 	width: 100%;
