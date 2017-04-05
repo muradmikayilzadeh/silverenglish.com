@@ -279,4 +279,27 @@ class Course_Controller extends Controller
         return back();
     }
 
+
+    // Watch Video
+
+    public function courseWatchVideo($id,$cd)
+    {   
+
+        $uc=User_course::where([['user_id',$_SESSION['userTrue']],['course_id',$cd]])->first();
+
+
+        if(!is_null($uc)){
+
+            $video=Course_video::find($id);
+            $videos=Course_video::where('course_id',$id)->get();
+
+            return view('video',compact('video','videos'));
+
+        }else{
+
+            return back()->with('notPermitted','*Videoları izləmək üçün kursa başlamalısınız!');
+
+        }
+    }
+
 }

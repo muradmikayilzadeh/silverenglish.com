@@ -121,4 +121,10 @@ if(isset($_SESSION['userTrue'])){
         Route::post('/deletevideo/{id}','Course_Controller@courseDeleteVideo');
 
 
+
+        // Video izlemek
+        Route::get('/watchvideo/{id}/{cd}','Course_Controller@courseWatchVideo');
+
+
+
 }

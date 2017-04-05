@@ -15,6 +15,13 @@
 	
 	<div class="container">
 		
+		@if($message= Session::get('notPermitted'))
+
+			<br>
+			<b style="color:red">{{$message}}</b>	
+
+		@endif
+
 		<h2 class="heading">{{$course->name}}</h2>
 
 		<div class="line"></div>
@@ -81,7 +88,7 @@
 							
 							@foreach($videos as $video)
 							
-							<a href="{{url('/watchvideo',$video->id)}}">
+							<a href="{{url('/watchvideo'.'/'.$video->id,$course->id)}}">
 
 							<li id="item" class="list-group-item col-md-12 col-sm-12 col-xs-12">
 
@@ -132,7 +139,7 @@
 						<div class="take">
 
 							<p class="priceText">{{$course->price}} AZN</p>
-							<button disabled class="start" onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
+							<button class="start" onclick="location.href='{{url('/start',$course->id)}}'">KURSA BAŞLA</button>
 
 						</div>
 						<div class="share">
