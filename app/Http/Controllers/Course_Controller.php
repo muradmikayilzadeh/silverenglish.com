@@ -36,41 +36,47 @@ class Course_Controller extends Controller
 
         ]);
 
-    	$new=new Courses;
+    	if(strlen($request->description)>=600){
 
-    	$new->name=$request->name;
-    	$new->description=$request->description;
-    	$new->instructor=$_SESSION['userTrue'];
-    	$new->skill=$request->skill;
-    	$new->language=$request->language;
+            $new=new Courses;
 
-    	if($request->hasFile('img')){
+            $new->name=$request->name;
+            $new->description=$request->description;
+            $new->instructor=$_SESSION['userTrue'];
+            $new->skill=$request->skill;
+            $new->language=$request->language;
 
-            $ext=$request->file('img')->getClientOriginalExtension();
+            if($request->hasFile('img')){
 
-            if($ext=='jpg' || $ext=='png' || $ext=='jpeg' || $ext=='bmp')  {
+                $ext=$request->file('img')->getClientOriginalExtension();
 
-                $file=$request->file('img');
-                $filename=time().'.'.$file->getClientOriginalExtension();
-                $file->move('assets/images/courses/',$filename);
-                $path='assets/images/courses/'.$filename;
-                $new->img=$path;
+                if($ext=='jpg' || $ext=='png' || $ext=='jpeg' || $ext=='bmp')  {
 
+                    $file=$request->file('img');
+                    $filename=time().'.'.$file->getClientOriginalExtension();
+                    $file->move('assets/images/courses/',$filename);
+                    $path='assets/images/courses/'.$filename;
+                    $new->img=$path;
+
+                }
+               
             }
-           
+
+            $new->price=$request->price;
+
+            $new->certificate=$request->certificate;
+
+            $new->active='0';
+
+            $new->save();
+
+            mkdir('assets/videos/'.$new->id,0777,true);
+
+            return back()->with('course','Kursunuz qeydə alındı! Müəyyən yoxlamadan sonra kursunuz əlavə ediləcək!');
+
+        }else{
+            return back();
         }
-
-        $new->price=$request->price;
-
-        $new->certificate=$request->certificate;
-
-        $new->active='0';
-
-        $new->save();
-
-        mkdir('assets/videos/'.$new->id,0777,true);
-
-        return back()->with('course','Kursunuz qeydə alındı! Müəyyən yoxlamadan sonra kursunuz əlavə ediləcək!');
 
     }
 

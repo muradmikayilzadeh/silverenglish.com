@@ -240,7 +240,7 @@
 							Kursun məzmunu
 						</div>
 
-						<textarea name="description" id="" rows="10" class="form-control"></textarea>
+						<textarea name="description" id="" rows="10" class="form-control" minlength="600" placeholder="Ən azı 600 hərf..."></textarea>
 
 					</div>
 
