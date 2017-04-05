@@ -100,10 +100,15 @@
 				.list-group-item{
 					
 					margin-bottom:40px;
-
+		
 					&:hover{
 						background:lightgray;
 						cursor: pointer;
+					}
+					
+					a{
+						color:black;
+						text-decoration: none;
 					}
 
 					video{
@@ -112,6 +117,8 @@
 
 					h3{
 						margin-top:-3px;
+						color:black;
+						text-decoration: none;
 					}
 					form{
 						display: inline-block;

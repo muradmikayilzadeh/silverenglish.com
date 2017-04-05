@@ -80,14 +80,20 @@
 						<ul class="list-group">
 							
 							@foreach($videos as $video)
-									
+							
+							<a href="{{url('/watchvideo',$video->id)}}">
+
 							<li id="item" class="list-group-item col-md-12 col-sm-12 col-xs-12">
 
 								<div class="col-md-3 col-sm-3 col-xs-12">
 									
 									<div class="row">
 										
-										<video src="../{{$video->src}}" class="embed-responsive embed-responsive-item"></video>
+										<video class="embed-responsive embed-responsive-item">
+											
+											<source src="../{{$video->src}}">
+
+										</video>
 
 									</div>
 
@@ -100,6 +106,8 @@
 								</div>
 
 							</li>
+
+							</a>
 
 							@endforeach
 
@@ -204,5 +212,5 @@
 		</div>
 	</div>
 </section>
-<br><br>
+
 @stop
