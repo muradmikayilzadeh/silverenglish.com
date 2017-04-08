@@ -15,7 +15,7 @@
 		
 		<div class="row">
 			
-			<a href="{{url('/')}}" id="home" class="panel col-md-12 col-sm-12 col-xs-12">Ana sehifeye qayit</a>
+			<a href="{{url('/')}}" id="home" class="panel col-md-12 col-sm-12 col-xs-12">Ana səhifəyə qayıt...</a>
 
 			<div id="loginForm" class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4 col-xs-offset-0 col-sm-offset-0 panel panel-default">
 				

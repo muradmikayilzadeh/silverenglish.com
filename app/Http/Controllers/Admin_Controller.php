@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Admin;
+use App\User;
+use App\Blog;
+use App\Courses;
+
 
 class Admin_Controller extends Controller
 {
@@ -42,13 +46,23 @@ class Admin_Controller extends Controller
 
    	}
 
-
-
-
    	public function index()
    	{
-   		return view('admin.index');
+
+      $users=User::orderBy('created_at','desc')->get();
+      $blogs=Blog::orderBy('created_at','desc')->get();
+      $courses=Courses::all();
+   		return view('admin.index',compact('users','blogs','courses'));
+
    	}
+
+
+    public function logout()
+    {
+      session_unset($_SESSION['adminTrue']);
+      session_destroy();
+      return redirect('silverenglish');
+    }
 
 
 }

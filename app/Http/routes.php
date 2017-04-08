@@ -138,5 +138,7 @@ if(isset($_SESSION['adminTrue'])){
 
     Route::get('/adminpanel','Admin_Controller@index');
 
+    Route::get('/admin/logout','Admin_Controller@logout');
+
 }
 
