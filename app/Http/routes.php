@@ -146,6 +146,14 @@ if(isset($_SESSION['adminTrue'])){
     // Useri gormek
     Route::get('/admin/usershow/{id}','Admin_Controller@showUser');
 
+    // Userler sehifesi
+    Route::get('/admin/users','Admin_Controller@users');
+
+    // Meqaleler sehifesi
+    Route::get('/admin/blogs','Admin_Controller@blogs');
+
+    // Meqale statusu deyismek
+    Route::post('/admin/blogstatus','Admin_Controller@blogstatus');
 
 }
 

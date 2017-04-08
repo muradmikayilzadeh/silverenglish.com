@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/admin/payments')}}">
+                    <a href="{{url('/admin/payment')}}">
                         <i class="pe-7s-map-marker"></i>
                         <p>Ödənişlər</p>
                     </a>

@@ -93,4 +93,38 @@ class Admin_Controller extends Controller
         return view('admin.user', compact('user'));
     }
 
+    public function users()
+    {
+        $users=User::all();
+        return view('admin.users', compact('users'));
+    }
+
+    public function blogs()
+    {
+        $blogs=Blog::all();
+        return view('admin.blogs', compact('blogs'));
+    }
+
+    public function blogstatus(Request $request)
+    {
+      
+      $blog=Blog::find($request->id);
+
+      if($blog->active=='1'){
+
+        $blog->active='0';
+        $blog->save();
+
+      }else{
+
+        $blog->active='1';
+        $blog->save();
+
+      }
+
+      return back();
+
+
+    }
+
 }
