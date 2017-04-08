@@ -24,6 +24,9 @@ Route::get('/login', function () {
 });
 
 
+Route::get('/silverenglish', 'Admin_Controller@login');
+
+
 Route::get('/register', function () {
     return view('register');
 });
@@ -125,6 +128,15 @@ if(isset($_SESSION['userTrue'])){
         // Video izlemek
         Route::get('/watchvideo/{id}/{cd}','Course_Controller@courseWatchVideo');
 
+}
 
+// Admin Panel routeleri
+
+Route::post('/admin/checklogin','Admin_Controller@checkLogin');
+
+if(isset($_SESSION['adminTrue'])){
+
+    Route::get('/adminpanel','Admin_Controller@index');
 
 }
+

@@ -14,18 +14,3 @@ video{
 	background:black;
 	max-height:500px;
 }
-		
-#black{
-	width: 100%;
-	background:black;
-	opacity: .7;
-	position: absolute;
-	top:0;
-}
-
-#mainVideo{
-	position: fixed;
-	top:150px;
-	left: 350px;
-	z-index: 99;
-}
