@@ -143,6 +143,9 @@ if(isset($_SESSION['adminTrue'])){
     // Useri statusu deyismek
     Route::post('/admin/status','Admin_Controller@status');
 
+    // Useri gormek
+    Route::get('/admin/usershow/{id}','Admin_Controller@showUser');
+
 
 }
 

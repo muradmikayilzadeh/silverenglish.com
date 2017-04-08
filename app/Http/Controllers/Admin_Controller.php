@@ -87,4 +87,10 @@ class Admin_Controller extends Controller
 
     }
 
+    public function showUser($id)
+    {
+        $user=User::find($id);
+        return view('admin.user', compact('user'));
+    }
+
 }

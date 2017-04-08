@@ -51,51 +51,33 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="{{url('/adminpanel')}}">
                         <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
+                        <p>Ana səhifə</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
-                        <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="table.html">
+                    <a href="{{url('/admin/users')}}">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>İstifadəçilər</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="{{url('/admin/blogs')}}">
                         <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                        <p>Məqalalər</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="{{url('/admin/courses')}}">
                         <i class="pe-7s-science"></i>
-                        <p>Icons</p>
+                        <p>Kurslar</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="{{url('/admin/payments')}}">
                         <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                        <p>Ödənişlər</p>
                     </a>
                 </li>
             </ul>
@@ -105,15 +87,6 @@
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
-                </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -189,7 +162,7 @@
                                            </td>
                                            <td>
 
-                                                <a href="" style="display: inline-block;" class="btn btn-default btn-xs">
+                                                <a href="{{url('admin/usershow',$user->id)}}" style="display: inline-block;" class="btn btn-default btn-xs">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                                 
