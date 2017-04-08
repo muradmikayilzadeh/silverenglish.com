@@ -51,7 +51,7 @@ class Admin_Controller extends Controller
 
       $users=User::orderBy('created_at','desc')->get();
       $blogs=Blog::orderBy('created_at','desc')->get();
-      $courses=Courses::all();
+      $courses=Courses::orderBy('created_at','desc')->get();
    		return view('admin.index',compact('users','blogs','courses'));
 
    	}
@@ -64,5 +64,27 @@ class Admin_Controller extends Controller
       return redirect('silverenglish');
     }
 
+
+    public function status(Request $request)
+    {
+      
+      $user=User::find($request->id);
+
+      if($user->active=='1'){
+
+        $user->active='0';
+        $user->save();
+
+      }else{
+
+        $user->active='1';
+        $user->save();
+
+      }
+
+      return back();
+
+
+    }
 
 }

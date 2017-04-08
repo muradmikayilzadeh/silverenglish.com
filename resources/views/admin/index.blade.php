@@ -136,6 +136,9 @@
                         
                         <h2>Ən son istifadəçilər</h2>
 
+                        <a href="" class="btn btn-success">Bütün istifadəçilər</a>
+                        <br><br>
+
                         <table class="table table-responsive">
                             
                             <thead>
@@ -159,7 +162,7 @@
 
                                     @foreach($users as $user)
 
-                                    @if($i<=5 && $user->active!='0')
+                                    @if($i<=5)
 
                                        <tr>
                                            
@@ -189,18 +192,41 @@
                                                 <a href="" style="display: inline-block;" class="btn btn-default btn-xs">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
+                                                
+                                                @if($user->active=='1')
 
-                                                <form action="" style="display: inline-block;">
+                                                <form action="{{url('admin/status')}}" method="post" style="display: inline-block;">
                                                     
                                                     {{csrf_field()}}
                                                     
-                                                    <label for="delete" class="btn btn-danger btn-xs">
+                                                    <input type="hidden" value="{{$user->id}}" name="id">
+                                                    <label for="deactive" class="btn btn-danger btn-xs">
                                                         <i class="fa fa-trash"></i>
                                                     </label>
 
-                                                    <input type="submit" class="hidden" id="delete">
+                                                    <input type="submit" class="hidden" id="deactive">
 
                                                 </form>
+
+                                                @endif
+
+                                                @if($user->active=='0')
+                                                    
+                                                <form action="{{url('admin/status')}}" method="post" style="display: inline-block;">
+                                                    
+                                                    {{csrf_field()}}
+
+                                                    <input type="hidden" value="{{$user->id}}" name="id">
+
+                                                    <label for="active" class="btn btn-success btn-xs">
+                                                        <i class="fa fa-check"></i>
+                                                    </label>
+
+                                                    <input type="submit" class="hidden" id="active">
+
+                                                </form>
+                                                    
+                                                @endif
                                                
                                            </td>
 
@@ -221,7 +247,11 @@
 
                     <div class="panel panel-defult col-md-12 col-sm-12 col-xs-12">
                         
-                        <h2>Ən son əlavə edilmiş məqalələr</h2>
+                        <h2>Ən son əlavə edilmiş məqalələr</h2>                        
+                        
+                        <a href="" class="btn btn-success">Bütün məqalələr</a>
+                        <br><br>
+
 
                         <ul class="list-group">
                             
@@ -231,7 +261,7 @@
                                 
                                 @if($a<=5 && $user->active!='0')
 
-                                <a href="">
+                                <a href="{{url('/blog',$blog->id)}}">
 
                                      <li class="list-group-item">
                                          
@@ -251,6 +281,42 @@
                         </ul>
 
                     </div>
+                
+                    <div class="panel panel-defult col-md-12 col-sm-12 col-xs-12">
+                        
+                        <h2>Ən son yaradılmış kurslar</h2>
+
+                        <a href="" class="btn btn-success">Bütün kurslar</a>
+                        <br><br>
+
+                        <ul class="list-group">
+                            
+                            @php $z=1 @endphp
+
+                            @foreach($courses as $course)
+                                
+                                @if($z<=5)
+
+                                <a href="{{url('/course',$course->id)}}">
+
+                                     <li class="list-group-item">
+                                         
+                                        {{$course->name}}
+                                        <small class="pull-right">{{$blog->created_at}}</small>
+
+                                     </li>
+
+                                </a>
+
+                                @php $z+=1 @endphp
+
+                                @endif
+
+                            @endforeach
+
+                        </ul>
+
+                    </div>
 
                  </div>
 
@@ -261,32 +327,8 @@
 
         <footer class="footer">
             <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="{{url('/')}}">Silverenglish.com</a>
                 </p>
             </div>
         </footer>
@@ -296,44 +338,4 @@
 
 
 </body>
-
-    <!--   Core JS Files   -->
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
-
-	<!--  Charts Plugin -->
-	<script src="assets/js/chartist.min.js"></script>
-
-    <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="assets/js/light-bootstrap-dashboard.js"></script>
-
-	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-	<script src="assets/js/demo.js"></script>
-
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-            },{
-                type: 'info',
-                timer: 4000
-            });
-
-    	});
-	</script>
-
 </html>

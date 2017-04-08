@@ -140,5 +140,9 @@ if(isset($_SESSION['adminTrue'])){
 
     Route::get('/admin/logout','Admin_Controller@logout');
 
+    // Useri statusu deyismek
+    Route::post('/admin/status','Admin_Controller@status');
+
+
 }
 
