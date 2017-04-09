@@ -1,5 +1,6 @@
 @extends('layouts.index')
 	<link rel="stylesheet" href="{{url('assets/css/courseset.css')}}">
+ 	<script src='https://cdn.rawgit.com/OpenShare/openshare/master/dist/openshare.js'></script>
 @section('content')
 <section id="path" class="col-md-12 col-sm-12 col-xs-12">
 	
