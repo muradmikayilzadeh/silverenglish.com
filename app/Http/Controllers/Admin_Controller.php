@@ -10,6 +10,7 @@ use App\Admin;
 use App\User;
 use App\Blog;
 use App\Courses;
+use App\Course_video;
 
 
 class Admin_Controller extends Controller
@@ -111,6 +112,42 @@ class Admin_Controller extends Controller
         return view('admin.blogshow', compact('blog'));
     }
 
+    public function courseStatus(Request $request)
+    {
+      
+      $course=Courses::find($request->id);
+
+      if($course->active=='1'){
+
+        $course->active='0';
+        $course->save();
+
+      }else{
+
+        $course->active='1';
+        $course->save();
+
+      }
+
+      return back();
+
+
+    }
+
+
+    public function courses()
+    {
+        $courses=Courses::orderBy('created_at','desc')->get();
+        return view('admin.courses', compact('courses'));
+    }
+
+    public function courseShow($id)
+    {
+        $course=Courses::find($id);
+        $videos=Course_video::where('course_id',$id)->get();
+        return view('admin.courseshow', compact('course','videos'));
+    }
+
     public function blogstatus(Request $request)
     {
       
@@ -133,11 +170,10 @@ class Admin_Controller extends Controller
 
     }
 
-
-    public function courses()
-    {
-        $courses=Courses::orderBy('created_at','desc')->get();
-        return view('admin.courses', compact('courses'));
+    public function courseWatchVideo($id)
+    {   
+        $video=Course_video::find($id);
+        return view('video',compact('video'));
     }
 
 

@@ -153,7 +153,7 @@ if(isset($_SESSION['adminTrue'])){
     Route::get('/admin/blogs','Admin_Controller@blogs');
 
     // Meqale statusu deyismek
-    Route::post('/admin/blogstatus','Admin_Controller@blogstatus');
+    Route::post('/admin/blogstatus','Admin_Controller@blogStatus');
 
     // Blogu gormek
     Route::get('/admin/blogshow/{id}','Admin_Controller@blogShow');
@@ -162,6 +162,16 @@ if(isset($_SESSION['adminTrue'])){
 
     // Kurslar
     Route::get('/admin/courses','Admin_Controller@courses');
+
+    // Mono kursa baxmaq
+
+    Route::get('/admin/course/{id}','Admin_Controller@courseShow');
+
+    // Coursenin statusunu deyismek
+    Route::post('/admin/coursestatus','Admin_Controller@courseStatus');
+
+    // Video izlemek
+    Route::get('admin/watchvideo/{id}','Admin_Controller@courseWatchVideo');
 
 
 }

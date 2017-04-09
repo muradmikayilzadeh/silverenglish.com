@@ -156,7 +156,7 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-xs btn-default">
+                                                    <a href="{{url('/admin/course',$course->id)}}" class="btn btn-xs btn-default">
                                                         <i class="fa fa-eye"></i>
                                                     </a>
                                                 </td>
