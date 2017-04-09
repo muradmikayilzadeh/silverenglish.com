@@ -15,14 +15,14 @@ class DatabaseSeeder extends Seeder
             'name'=> 'Murad',
             'surname'=> 'Mikayilzada',
             'email'=> 'm.murad@code.edu.az',
-            'password'=> md5('muradmikayilzada200292')
+            'password'=> md5('123456789')
             ]);
 
         DB::table('admins')->insert([
             'name'=> 'Rufat',
             'surname'=> 'Dargahli',
             'email'=> 'rufatdargahli@yahoo.co.uk',
-            'password'=> md5('rufatdargahli')
+            'password'=> md5('123456789')
             ]);
     }
 }
