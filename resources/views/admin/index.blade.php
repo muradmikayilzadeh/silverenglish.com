@@ -109,7 +109,7 @@
                         
                         <h2>Ən son istifadəçilər</h2>
 
-                        <a href="" class="btn btn-success">Bütün istifadəçilər</a>
+                        <a href="{{url('/admin/users')}}" class="btn btn-success">Bütün istifadəçilər</a>
                         <br><br>
 
                         <table class="table table-responsive">
@@ -222,7 +222,7 @@
                         
                         <h2>Ən son əlavə edilmiş məqalələr</h2>                        
                         
-                        <a href="" class="btn btn-success">Bütün məqalələr</a>
+                        <a href="{{url('/admin/blogs')}}" class="btn btn-success">Bütün məqalələr</a>
                         <br><br>
 
 
@@ -259,7 +259,7 @@
                         
                         <h2>Ən son yaradılmış kurslar</h2>
 
-                        <a href="" class="btn btn-success">Bütün kurslar</a>
+                        <a href="{{url('/admin/courses')}}" class="btn btn-success">Bütün kurslar</a>
                         <br><br>
 
                         <ul class="list-group">

@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>İstifadəçilər</title>
+    <title>Kurslar</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -106,117 +106,134 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Bütün Məqalələr</h4>
+                                <h4 class="title">Təsdiqlənməmiş kurslar</h4>
                                 <p class="category">Yenidən köhnəyə</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <tr>
-                                            <td>ID</td>
-                                            <td>Başlıq</td>
-                                            <td>Məzmun</td>
-                                            <td>Müəllif</td>
-                                            <td>Foto</td>
-                                            <td>Mövzu</td>
-                                            <td>Aktivlik</td>
-                                            <td>Əməllər</td>
+                                           <td>ID</td>
+                                           <td>Ad</td>
+                                           <td>Açıqlama</td>
+                                           <td>Təlimçi</td>
+                                           <td>Bacarıq</td>
+                                           <td>Dil</td>
+                                           <td>Foto</td>
+                                           <td>Qiymət</td>
+                                           <td>Sertifikat</td>
+                                           <td>Əməllər</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                 
                                         @php
-                                            use App\User;    
-                                            use App\Tags;        
+                                            use App\User;
                                         @endphp
-                                        @foreach($blogs as $blog)
+                                        @foreach($courses as $course)
+                                            @if($course->active!='1')
                                             <tr>
-                                                   
-                                                <td>{{$blog->id}}</td>
-                                                <td>{{$blog->title}}</td>
-                                                <td>{{substr($blog->content,0,100)}}</td>
+                                                <td>{{$course->id}}</td>       
+                                                <td>{{$course->name}}</td>
+                                                <td>{{substr($course->description,0,100)}}</td>
                                                 <td>
                                                     @php
-
-                                                        $author=User::find($blog->user_id);
-
+                                                    $user=User::find($course->instructor);
                                                     @endphp
-                                                    {{$author->name.' '.$author->surname}}
-
+                                                    {{$user->name.' '.$user->surname}}
                                                 </td>
+                                                <td>{{$course->skill}}</td>
+                                                <td>{{$course->language}}</td>
                                                 <td>
-                                                       
-                                                    <img src="../{{$blog->img}}" class="img img-responsive img-thumbnail" style="max-height: 50px">
-
+                                                    <img src="../../{{$course->img}}" class="img img-thumbnail" style="max-height: 50px">
                                                 </td>
+                                                <td>{{$course->price}} AZN</td>
                                                 <td>
-                                                    @php
-                                                        $tag=User::find($blog->tag);
-                                                    @endphp
-                                                    {{$tag->name}}
-                                                </td>
-                                                <td class="text-center">
-                                                    @if($blog->active!='0')
-                                                        
-                                                        +
-
-                                                         @else
+                                                    @if($course->certificate=='0')
                                                         -
-
+                                                        @else
+                                                        +
                                                     @endif
                                                 </td>
                                                 <td>
-
-                                                    <a href="{{url('admin/blogshow',$blog->id)}}" style="display: inline-block;" class="btn btn-default btn-xs">
+                                                    <a href="" class="btn btn-xs btn-default">
                                                         <i class="fa fa-eye"></i>
                                                     </a>
-                                                        
-                                                    {{-- @if($blog->active=='1')
-
-                                                    <form action="{{url('admin/blogstatus')}}" method="post" style="display: inline-block;">
-                                                            
-                                                        {{csrf_field()}}
-                                                            
-                                                        <input type="hidden" value="{{$blog->id}}" name="id">
-                                                        <label for="deactive" class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash"></i>
-                                                            </label>
-
-                                                        <input type="submit" class="hidden" id="deactive">
-
-                                                    </form>
-
-                                                    @endif --}}
-
-                                                   {{--  @if($blog->active=='0')
-                                                            
-                                                    <form action="{{url('admin/blogstatus')}}" method="post" style="display: inline-block;">
-                                                            
-                                                        {{csrf_field()}}
-
-                                                        <input type="hidden" value="{{$blog->id}}" name="id">
-
-                                                        <label for="active" class="btn btn-success btn-xs">
-                                                            <i class="fa fa-check"></i>
-                                                        </label>
-
-                                                        <input type="submit" class="hidden" id="active">
-
-                                                    </form>
-                                                            
-                                                    @endif --}}
-                                                       
                                                 </td>
-
                                             </tr>
+                                            @endif
                                         @endforeach
-
                                     </tbody>
                                 </table>
 
                             </div>
                         </div>
                     </div>
+
+                    
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Təsdiqlənmiş kurslar</h4>
+                                <p class="category">Yenidən köhnəyə</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                           <td>ID</td>
+                                           <td>Ad</td>
+                                           <td>Açıqlama</td>
+                                           <td>Təlimçi</td>
+                                           <td>Bacarıq</td>
+                                           <td>Dil</td>
+                                           <td>Foto</td>
+                                           <td>Qiymət</td>
+                                           <td>Sertifikat</td>
+                                           <td>Əməllər</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($courses as $course)
+                                            @if($course->active!='0')
+                                            <tr>
+                                                <td>{{$course->id}}</td>       
+                                                <td>{{$course->name}}</td>
+                                                <td>{{substr($course->description,0,100)}}</td>
+                                                <td>
+                                                    @php
+                                                    $user=User::find($course->instructor);
+                                                    @endphp
+                                                    {{$user->name.' '.$user->surname}}
+                                                </td>
+                                                <td>{{$course->skill}}</td>
+                                                <td>{{$course->language}}</td>
+                                                <td>
+                                                    <img src="../../{{$course->img}}" class="img img-thumbnail" style="max-height: 50px">
+                                                </td>
+                                                <td>{{$course->price}} AZN</td>
+                                                <td>
+                                                    @if($course->certificate=='0')
+                                                        -
+                                                        @else
+                                                        +
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="" class="btn btn-xs btn-default">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            @endif
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

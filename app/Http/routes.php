@@ -155,5 +155,14 @@ if(isset($_SESSION['adminTrue'])){
     // Meqale statusu deyismek
     Route::post('/admin/blogstatus','Admin_Controller@blogstatus');
 
+    // Blogu gormek
+    Route::get('/admin/blogshow/{id}','Admin_Controller@blogShow');
+
+
+
+    // Kurslar
+    Route::get('/admin/courses','Admin_Controller@courses');
+
+
 }
 

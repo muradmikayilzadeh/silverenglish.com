@@ -101,8 +101,14 @@ class Admin_Controller extends Controller
 
     public function blogs()
     {
-        $blogs=Blog::all();
+        $blogs=Blog::orderBy('created_at','desc')->get();
         return view('admin.blogs', compact('blogs'));
+    }
+
+    public function blogShow($id)
+    {
+        $blog=Blog::find($id);
+        return view('admin.blogshow', compact('blog'));
     }
 
     public function blogstatus(Request $request)
@@ -126,5 +132,14 @@ class Admin_Controller extends Controller
 
 
     }
+
+
+    public function courses()
+    {
+        $courses=Courses::orderBy('created_at','desc')->get();
+        return view('admin.courses', compact('courses'));
+    }
+
+
 
 }
