@@ -143,9 +143,24 @@
 
 						</div>
 						<div class="share">
-							<i class="fa fa-facebook"></i>
-							<i class="fa fa-twitter"></i>
-							<i class="fa fa-instagram"></i>
+							<i class="fa fa-facebook" 
+								data-open-share="facebook"
+								data-open-share-link="{{url('/course',$course->id)}}"
+								data-open-share-picture="{{url($course->img)}}"
+								data-open-share-description="{{substr($course->content,0,300)}}"></i>
+
+							<i class="fa fa-twitter"
+								data-open-share="twitter"
+								data-open-share-link="{{url('/course',$course->id)}}"
+								data-open-share-picture="{{url($course->img)}}"
+								data-open-share-description="{{substr($course->content,0,300)}}"></i>
+
+							<i class="fa fa-google-plus"
+								data-open-share="google"
+								data-open-share-link="{{url('/course',$course->id)}}"
+								data-open-share-picture="{{url($course->img)}}"
+								data-open-share-description="{{substr($course->content,0,300)}}"></i>
+
 						</div>
 						<div class="author">
 							<img src="../{{$ins->avatar}}" alt="">
@@ -159,10 +174,6 @@
 								<li>
 									<i class="fa fa-file-text"></i>
 									Leksiya
-								</li>
-								<li>
-									<i class="fa fa-clock-o"></i>
-									Zaman
 								</li>
 								<li>
 									<i class="fa fa-level-up"></i>
@@ -180,9 +191,6 @@
 							<ul>
 								<li>
 									{{count($videos)}}
-								</li>
-								<li>
-									4.0
 								</li>
 								<li>
 									{{$course->skill}}
